@@ -1,15 +1,19 @@
 # --- Stage 1: Build Assets with Node ---
-FROM node:18-bullseye-slim AS assets-builder
+# Use Node 20 as Vite 7/Tailwind 4 are modern
+FROM node:20-bullseye AS assets-builder
 WORKDIR /app
 
-# Install build dependencies if needed
-# RUN apt-get update && apt-get install -y python3 make g++
-
+# Copy package files
 COPY package*.json ./
-RUN npm install
 
+# Install ALL dependencies (including devDependencies for build)
+RUN npm install --include=dev
+
+# Copy the rest of the app
 COPY . .
-RUN npm run build
+
+# Run build with more verbosity and CI flag
+RUN npm run build -- --logLevel info
 
 # --- Stage 2: Final Production Image ---
 FROM php:8.2-fpm-bullseye
