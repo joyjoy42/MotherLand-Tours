@@ -13,9 +13,14 @@ mkdir -p storage/framework/{sessions,cache,views}
 mkdir -p storage/logs
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Run migrations (ensure tables like 'sessions' exist)
-echo "Running migrations..."
-php artisan migrate --force --no-interaction
+# Run migrations with a retry loop
+echo "Attempting to run migrations..."
+for i in {1..5}; do
+    php artisan migrate --force --no-interaction && break || {
+        echo "Migration attempt $i failed, retrying in 5s..."
+        sleep 5
+    }
+done
 
 # Cache clear and config (at runtime to pick up Render env vars)
 echo "Optimizing Laravel..."

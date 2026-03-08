@@ -7,7 +7,12 @@ services:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
-        value: false
+        value: true
+      - key: APP_URL
+        fromService:
+          type: web
+          name: motherland-tours
+          property: host
       - key: SESSION_DRIVER
         value: file
       - key: APP_KEY
