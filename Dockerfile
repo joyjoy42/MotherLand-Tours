@@ -1,3 +1,12 @@
+# --- Stage 1: Build Assets with Node ---
+FROM node:18-slim AS assets-builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# --- Stage 2: Final Production Image ---
 FROM php:8.2-fpm
 
 # Install system dependencies
@@ -24,17 +33,14 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy existing application directory contents
+# Copy existing application
 COPY . /var/www
 
-# Install dependencies
-RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+# Copy compiled assets from Stage 1
+COPY --from=assets-builder /app/public/build /var/www/public/build
 
-# Install Node and build assets
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs \
-    && npm install \
-    && npm run build
+# Install PHP dependencies
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Copy Nginx config
 COPY nginx.conf /etc/nginx/sites-available/default
