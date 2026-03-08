@@ -31,8 +31,7 @@ COPY . /var/www
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Install Node and build assets
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodesource-release \
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs \
     && npm install \
     && npm run build
@@ -43,6 +42,9 @@ COPY nginx.conf /etc/nginx/sites-available/default
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
+# Make start script executable
+RUN chmod +x /var/www/start.sh
+
 EXPOSE 80
 
-CMD service nginx start && php-fpm
+CMD ["/var/www/start.sh"]
