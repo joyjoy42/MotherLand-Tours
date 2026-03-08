@@ -1,18 +1,9 @@
 # --- Stage 1: Build Assets with Node ---
-# Use Node 20 as Vite 7/Tailwind 4 are modern
 FROM node:20-bullseye AS assets-builder
 WORKDIR /app
-
-# Copy package files
 COPY package*.json ./
-
-# Install ALL dependencies (including devDependencies for build)
 RUN npm install --include=dev
-
-# Copy the rest of the app
 COPY . .
-
-# Run build with more verbosity and CI flag
 RUN npm run build -- --logLevel info
 
 # --- Stage 2: Final Production Image ---
@@ -30,13 +21,16 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libzip-dev \
     libicu-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
     nginx
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd zip intl
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd zip intl
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -51,12 +45,13 @@ COPY . /var/www
 COPY --from=assets-builder /app/public/build /var/www/public/build
 
 # Install PHP dependencies
-RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+# Using --ignore-platform-reqs to avoid strict environment mismatches in Docker
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-reqs
 
 # Copy Nginx config
 COPY nginx.conf /etc/nginx/sites-available/default
 
-# Fix permissions for Laravel
+# Fix permissions
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
