@@ -1,13 +1,18 @@
 # --- Stage 1: Build Assets with Node ---
-FROM node:18-slim AS assets-builder
+FROM node:18-bullseye-slim AS assets-builder
 WORKDIR /app
+
+# Install build dependencies if needed
+# RUN apt-get update && apt-get install -y python3 make g++
+
 COPY package*.json ./
 RUN npm install
+
 COPY . .
 RUN npm run build
 
 # --- Stage 2: Final Production Image ---
-FROM php:8.2-fpm
+FROM php:8.2-fpm-bullseye
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -19,13 +24,15 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libpq-dev \
+    libzip-dev \
+    libicu-dev \
     nginx
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd zip intl
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -45,11 +52,13 @@ RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoload
 # Copy Nginx config
 COPY nginx.conf /etc/nginx/sites-available/default
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+# Fix permissions for Laravel
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
-# Make start script executable
-RUN chmod +x /var/www/start.sh
+# Make start script executable and ensure LF line endings
+RUN sed -i 's/\r$//' /var/www/start.sh \
+    && chmod +x /var/www/start.sh
 
 EXPOSE 80
 
