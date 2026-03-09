@@ -3,11 +3,11 @@
 
 @section('content')
 <!-- Premium Hero Section -->
-<section style="padding: 100px 0; background: linear-gradient(135deg, #fefeff 0%, #f0f9ff 100%);">
+<section class="bg-grain" style="padding: 100px 0; background: linear-gradient(135deg, white 0%, #fffbf2 100%);">
     <div class="container" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center;">
         <div class="animate-fade">
             <span class="badge-yellow" style="margin-bottom: 20px; display: inline-block;">Expérience Authentique</span>
-            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 24px; color: var(--dark);">Découvrez le <span style="color: var(--primary);">Bénin</span> Autrement</h1>
+            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 24px; color: var(--color-mother-navy);">Découvrez le <span style="color: var(--color-mother-terracotta);">Bénin</span> Autrement</h1>
             <p style="font-size: 1.2rem; color: #475569; margin-bottom: 40px; line-height: 1.8;">Voyages organisés de 7 et 10 jours depuis Paris, Abidjan, Maroc et Canada. Plongez au cœur d'une terre de traditions et d'histoire.</p>
             <div style="display: flex; gap: 20px;">
                 <a href="/reserver" class="btn btn-cta">RÉSERVER MAINTENANT <i class="fas fa-arrow-right"></i></a>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="animate-fade" style="position: relative;">
-            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--accent); border-radius: 50%; z-index: -1; opacity: 0.3;"></div>
+            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: var(--color-mother-terracotta); border-radius: 50%; z-index: -1; opacity: 0.2;"></div>
             <img src="{{ asset('images/hero.jpg') }}" class="rounded-img" style="width: 100%; height: 500px; object-fit: cover; object-position: top;" alt="Dahomey Amazon Statue">
         </div>
     </div>
@@ -28,7 +28,7 @@
     
     <div class="container" style="position: relative; z-index: 2;">
         <div class="section-header">
-            <span style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Nos Offres</span>
+            <span style="color: var(--color-mother-terracotta); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Nos Offres</span>
             <h2 style="margin-top: 10px; color: white;">Choisissez Votre Aventure</h2>
         </div>
         
@@ -58,11 +58,11 @@
             </div>
 
             <!-- Pack 10 Jours -->
-            <div class="premium-card" style="border: 2px solid var(--primary); position: relative;">
+            <div class="premium-card" style="border: 2px solid var(--color-mother-terracotta); position: relative;">
                 <div style="position: absolute; top: -15px; right: 30px;" class="badge-yellow">Le Plus Populaire</div>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
                     <h3 style="font-size: 1.8rem;">Pack 10 Jours</h3>
-                    <i class="fas fa-safari" style="font-size: 2rem; color: var(--primary); opacity: 0.2;"></i>
+                        <i class="fas fa-safari" style="font-size: 2rem; color: var(--color-mother-terracotta); opacity: 0.2;"></i>
                 </div>
                 <p style="color: #64748b; margin-bottom: 24px;">L'expérience ultime incluant le Nord et ses parcs nationaux légendaires.</p>
                 <div style="margin-bottom: 32px;">
@@ -94,21 +94,21 @@
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
             <div style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: white; border-radius: 24px; box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--primary);">
+                <div style="width: 80px; height: 80px; background: white; border-radius: 24px; box-shadow: var(--shadow-ambient); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--color-mother-terracotta);">
                     <i class="fas fa-users-viewfinder" style="font-size: 2rem;"></i>
                 </div>
                 <h4 style="font-size: 1.25rem; margin-bottom: 16px;">Petits Groupes Premium</h4>
                 <p style="color: #64748b; font-size: 0.95rem;">Pour une immersion intime et des échanges privilégiés, nos groupes sont limités à 5 personnes.</p>
             </div>
             <div style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: white; border-radius: 24px; box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--primary);">
+                <div style="width: 80px; height: 80px; background: white; border-radius: 24px; box-shadow: var(--shadow-ambient); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--color-mother-terracotta);">
                     <i class="fas fa-heart-circle-check" style="font-size: 2rem;"></i>
                 </div>
                 <h4 style="font-size: 1.25rem; margin-bottom: 16px;">Sécurité & Sérénité</h4>
                 <p style="color: #64748b; font-size: 0.95rem;">Une assistance francophone 24h/24 et des guides experts natifs pour un voyage sans soucis.</p>
             </div>
             <div style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: white; border-radius: 24px; box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--primary);">
+                <div style="width: 80px; height: 80px; background: white; border-radius: 24px; box-shadow: var(--shadow-ambient); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: var(--color-mother-terracotta);">
                     <i class="fas fa-earth-africa" style="font-size: 2rem;"></i>
                 </div>
                 <h4 style="font-size: 1.25rem; margin-bottom: 16px;">Engagement Éco-responsable</h4>
@@ -159,9 +159,9 @@
 <!-- Final CTA -->
 <section style="padding: 100px 0;">
     <div class="container">
-        <div style="background: var(--dark); border-radius: 40px; padding: 80px 40px; text-align: center; position: relative; overflow: hidden;">
-            <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: var(--primary); border-radius: 50%; opacity: 0.1;"></div>
-            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--accent); border-radius: 50%; opacity: 0.1;"></div>
+        <div style="background: var(--color-mother-navy); border-radius: 40px; padding: 80px 40px; text-align: center; position: relative; overflow: hidden;">
+            <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: var(--color-mother-terracotta); border-radius: 50%; opacity: 0.1;"></div>
+            <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--color-mother-teal); border-radius: 50%; opacity: 0.1;"></div>
             
             <h2 style="color: white; font-size: 3rem; margin-bottom: 24px; position: relative; z-index: 1;">Prêt à Vivre le Bénin ?</h2>
             <p style="color: #94a3b8; font-size: 1.25rem; margin-bottom: 48px; max-width: 600px; margin-inline: auto;">Contactez-nous dès maintenant pour commencer à planifier votre prochain voyage inoubliable.</p>

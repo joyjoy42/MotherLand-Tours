@@ -1,5 +1,5 @@
 <div class="premium-card" style="padding: 0; overflow: hidden; border: none;">
-    <div style="background: var(--dark); color: white; padding: 32px 48px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="background: var(--color-mother-navy); color: white; padding: 32px 48px; display: flex; justify-content: space-between; align-items: center;">
         <h3 style="font-size: 1.8rem; text-transform: uppercase; color: white;">Pack {{ $days }} Jours</h3>
         <span style="background: rgba(255,255,255,0.1); padding: 8px 20px; border-radius: 100px; font-size: 0.85rem; font-weight: 600;">Tout Inclus</span>
     </div>
@@ -8,16 +8,16 @@
         <!-- Premium Price Grid -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 48px;">
             <div style="background: var(--gray-light); padding: 32px; text-align: center; border-radius: var(--radius-md); border: 2px solid transparent; transition: 0.3s;">
-                <div style="font-weight: 800; font-size: 2.2rem; font-family: 'Outfit'; color: var(--dark); margin-bottom: 8px;">{{ $prices[0] }}</div>
+                <div style="font-weight: 800; font-size: 2.2rem; font-family: 'Outfit'; color: var(--color-mother-navy); margin-bottom: 8px;">{{ $prices[0] }}</div>
                 <div style="font-size: 0.9rem; color: #64748b; font-weight: 600;">1 Voyageur</div>
             </div>
-            <div style="background: var(--primary-light); padding: 32px; text-align: center; border-radius: var(--radius-md); border: 2px solid var(--primary); transform: scale(1.05); box-shadow: var(--shadow-md);">
-                <div style="font-weight: 800; font-size: 2.2rem; font-family: 'Outfit'; color: var(--primary-dark); margin-bottom: 8px;">{{ $prices[1] }}</div>
-                <div style="font-size: 0.9rem; color: var(--primary-dark); font-weight: 700;">2 Voyageurs</div>
+            <div style="background: #fff5ed; padding: 32px; text-align: center; border-radius: var(--radius-md); border: 2px solid var(--color-mother-terracotta); transform: scale(1.05); box-shadow: var(--shadow-ambient);">
+                <div style="font-weight: 800; font-size: 2.2rem; font-family: 'Outfit'; color: var(--color-mother-terracotta); margin-bottom: 8px;">{{ $prices[1] }}</div>
+                <div style="font-size: 0.9rem; color: var(--color-mother-terracotta); font-weight: 700;">2 Voyageurs</div>
                 <div style="margin-top: 12px;"><span class="badge-yellow" style="font-size: 0.65rem;">Recommandé</span></div>
             </div>
             <div style="background: var(--gray-light); padding: 32px; text-align: center; border-radius: var(--radius-md); border: 2px solid transparent; transition: 0.3s;">
-                <div style="font-weight: 800; font-size: 2.2rem; font-family: 'Outfit'; color: var(--dark); margin-bottom: 8px;">{{ $prices[2] }}</div>
+                <div style="font-weight: 800; font-size: 2.2rem; font-family: 'Outfit'; color: var(--color-mother-navy); margin-bottom: 8px;">{{ $prices[2] }}</div>
                 <div style="font-size: 0.9rem; color: #64748b; font-weight: 600;">3+ Voyageurs</div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div style="margin-top: 48px; background: #fefce8; border-radius: var(--radius-md); padding: 32px; border-left: 6px solid var(--accent);">
+        <div style="margin-top: 48px; background: #feffed; border-radius: var(--radius-md); padding: 32px; border-left: 6px solid var(--color-benin-yellow);">
             <div style="display: flex; gap: 24px; align-items: flex-start;">
                 <div style="font-size: 1.5rem; color: #854d0e;"><i class="fas fa-info-circle"></i></div>
                 <div>

@@ -16,7 +16,7 @@ services:
       - key: SESSION_DRIVER
         value: file
       - key: APP_KEY
-        generateValue: true
+        placeholder: Paste your base64 APP_KEY here
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST

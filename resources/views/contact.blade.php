@@ -6,18 +6,18 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 1;"></div>
     <div class="container" style="position: relative; z-index: 2;">
         <span class="badge-yellow" style="margin-bottom: 20px; display: inline-block;">CONTACT</span>
-        <h1 style="font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 24px;">Parlons de Votre <span>Projet</span></h1>
+        <h1 style="font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 24px;">Parlons de Votre <span style="color: var(--color-mother-terracotta);">Projet</span></h1>
         <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Notre équipe est à votre entière disposition pour faire de votre voyage une réussite totale.</p>
     </div>
 </section>
 
-<section class="section-padding" style="background: white;">
+<section class="section-padding bg-grain" style="background: white;">
     <div class="container">
         <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start;">
             <!-- Contact Info Sidebar -->
             <div style="display: grid; gap: 32px;">
                 <div class="premium-card" style="display: flex; gap: 24px; align-items: center; padding: 24px 32px;">
-                    <div style="width: 56px; height: 56px; background: #eff6ff; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #2563eb; font-size: 1.5rem; flex-shrink: 0;">
+                    <div style="width: 56px; height: 56px; background: var(--color-primary-light); border-radius: 18px; display: flex; align-items: center; justify-content: center; color: var(--color-mother-navy); font-size: 1.5rem; flex-shrink: 0;">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
@@ -46,14 +46,14 @@
                     </div>
                 </div>
 
-                <!-- Green Highlight Box -->
-                <div style="background: #059669; border-radius: var(--radius-lg); padding: 48px 32px; text-align: center; color: white; box-shadow: 0 20px 40px -10px rgba(5, 150, 105, 0.3);">
+                <!-- Teal Highlight Box -->
+                <div style="background: var(--color-mother-teal); border-radius: var(--radius-lg); padding: 48px 32px; text-align: center; color: white; box-shadow: 0 20px 40px -10px rgba(2, 106, 92, 0.3);">
                     <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; font-size: 2.22rem;">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <h3 style="color: white; margin-bottom: 16px; font-size: 1.8rem;">Réponse Immédiate</h3>
                     <p style="color: rgba(255,255,255,0.8); margin-bottom: 32px; font-size: 1rem; line-height: 1.6;">Pour toute urgence ou question rapide, notre service conciergerie est disponible en direct.</p>
-                    <a href="https://wa.me/22948803613" target="_blank" class="btn" style="background: white; color: #059669; width: 100%; border-radius: var(--radius-md);">OUVRIR LA CONVERSATION</a>
+                    <a href="https://wa.me/22948803613" target="_blank" class="btn" style="background: white; color: var(--color-mother-teal); width: 100%; border-radius: var(--radius-md);">OUVRIR LA CONVERSATION</a>
                 </div>
             </div>
 

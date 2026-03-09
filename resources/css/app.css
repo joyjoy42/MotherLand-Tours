@@ -6,6 +6,109 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Outfit', sans-serif;
+
+    /* Logo Palette */
+    --color-mother-terracotta: #E6904D;
+    --color-mother-navy: #012B55;
+    --color-mother-teal: #026A5C;
+
+    /* Beninese Accents */
+    --color-benin-green: #008751;
+    --color-benin-yellow: #fcd116;
+    --color-benin-red: #e8112d;
+
+    /* Semantic Mappings */
+    --color-primary: var(--color-mother-terracotta);
+    --color-primary-dark: #cc7a3a;
+    --color-primary-light: #fff5ed;
+
+    --color-secondary: var(--color-mother-teal);
+    --color-secondary-dark: #01544a;
+
+    --color-bg-dark: var(--color-mother-navy);
+    --color-text-main: #334155;
+    --color-text-dark: var(--color-mother-navy);
+
+    /* Design System Tokens */
+    --radius-premium: 2rem;
+    --shadow-ambient: 0 10px 40px -10px rgba(1, 43, 85, 0.15);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+    * {
+        @apply transition-colors duration-200;
+    }
+
+    body {
+        @apply font-sans bg-slate-50 text-slate-700 antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-display font-bold text-mother-navy;
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-7xl mx-auto px-6;
+    }
+
+    .premium-card {
+        @apply bg-white rounded-[--radius-premium] shadow-[--shadow-ambient] p-8 transition-all duration-300 border border-slate-100 hover:-translate-y-2 hover:shadow-2xl;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center px-8 py-4 font-display font-bold rounded-2xl transition-all duration-300 gap-3 text-sm uppercase tracking-wider;
+    }
+
+    .btn-primary {
+        @apply bg-mother-navy text-white hover:bg-mother-terracotta hover:scale-105;
+    }
+
+    .btn-cta {
+        @apply bg-mother-terracotta text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/40;
+    }
+
+    .navbar {
+        @apply fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100 h-24 flex items-center;
+    }
+
+    .nav-item {
+        @apply px-4 py-2 font-display font-semibold text-mother-navy rounded-xl transition-all hover:bg-mother-terracotta/10 hover:text-mother-terracotta;
+    }
+
+    .nav-item.active {
+        @apply bg-mother-terracotta/10 text-mother-terracotta;
+    }
+
+    .form-control {
+        @apply w-full px-6 py-4 bg-white border-2 border-slate-100 rounded-2xl font-sans focus:outline-none focus:border-mother-terracotta focus:bg-orange-50/30 transition-all;
+    }
+
+    .footer {
+        @apply bg-mother-navy text-white pt-24 pb-12 rounded-t-[3rem] relative overflow-hidden;
+    }
+
+    .wa-float {
+        @apply fixed bottom-10 right-10 w-16 h-16 bg-[#25d366] text-white rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 hover:scale-110 transition-transform;
+    }
+}
+
+@utility bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    opacity: 0.03;
+}
+
+@utility motif-benin {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30-15-30z' fill='%23E6904D' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
 }
