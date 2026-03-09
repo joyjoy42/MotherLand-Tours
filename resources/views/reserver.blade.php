@@ -6,21 +6,21 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 1;"></div>
     <div class="container" style="position: relative; z-index: 2;">
         <span class="badge-yellow" style="margin-bottom: 20px; display: inline-block;">RÉSERVATION</span>
-        <h1 style="font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 24px;">Préparez Votre <span>Séjour</span></h1>
+        <h1 style="font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 24px;">Préparez Votre <span style="color: var(--color-mother-terracotta);">Séjour</span></h1>
         <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Remplissez ce formulaire et notre équipe s'occupe de tout pour vous.</p>
     </div>
 </section>
 
-<section class="section-padding" style="background: white;">
+<section class="section-padding bg-grain" style="background: white;">
     <div class="container">
         <div style="max-width: 900px; margin: 0 auto;">
             <!-- Important Info -->
-            <div style="background: var(--primary-light); border-radius: var(--radius-lg); padding: 40px; margin-bottom: 64px; border: 1px solid rgba(6, 182, 212, 0.1); display: flex; gap: 32px; align-items: center;">
-                <div style="width: 64px; height: 64px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.8rem; flex-shrink: 0; box-shadow: var(--shadow-sm);">
+            <div style="background: var(--color-primary-light); border-radius: var(--radius-lg); padding: 40px; margin-bottom: 64px; border: 1px solid rgba(230, 144, 77, 0.1); display: flex; gap: 32px; align-items: center;">
+                <div style="width: 64px; height: 64px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--color-mother-terracotta); font-size: 1.8rem; flex-shrink: 0; box-shadow: var(--shadow-ambient);">
                     <i class="fas fa-info-circle"></i>
                 </div>
                 <div>
-                    <h4 style="color: var(--primary-dark); margin-bottom: 12px; font-size: 1.2rem;">À savoir avant de réserver :</h4>
+                    <h4 style="color: var(--color-mother-navy); margin-bottom: 12px; font-size: 1.2rem;">À savoir avant de réserver :</h4>
                     <ul style="list-style: none; font-size: 0.95rem; color: #475569; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                         <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i> Pas de paiement immédiat</li>
                         <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i> Confirmation sous 24h</li>
@@ -99,8 +99,8 @@
             </div>
 
             <!-- WhatsApp CTA -->
-            <div style="background: white; border-radius: var(--radius-lg); padding: 48px; margin-top: 64px; text-align: center; box-shadow: var(--shadow-md); border: 2px solid #ecfdf5;">
-                <div style="width: 80px; height: 80px; background: #ecfdf5; color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.22rem; margin: 0 auto 32px;">
+            <div style="background: white; border-radius: var(--radius-lg); padding: 48px; margin-top: 64px; text-align: center; box-shadow: var(--shadow-ambient); border: 2px solid var(--color-mother-teal);">
+                <div style="width: 80px; height: 80px; background: #e6fdfa; color: var(--color-mother-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.22rem; margin: 0 auto 32px;">
                     <i class="fab fa-whatsapp"></i>
                 </div>
                 <h3 style="margin-bottom: 16px; font-family: 'Outfit';">Préférez réserver par WhatsApp ?</h3>
