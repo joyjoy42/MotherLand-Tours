@@ -1,50 +1,48 @@
 #!/usr/bin/env bash
+# Exit on error
 set -e
 
-# Provide a default port if $PORT is not set
-REAL_PORT=${PORT:-80}
-echo "Starting Nginx on port $REAL_PORT"
+echo "--- MotherLand Tours: Production Startup ---"
 
-# Replace ${PORT} in nginx config
+# Port Configuration
+REAL_PORT=${PORT:-80}
+echo "=> Configuring Port: $REAL_PORT"
 sed -i "s/\${PORT}/${REAL_PORT}/g" /etc/nginx/sites-available/default
-# Ensure the link exists in sites-enabled
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
-# Ensure storage directories exist and are writable
+# Permissions & Directories
+echo "=> Setting up storage and permissions..."
 mkdir -p storage/framework/{sessions,cache,views}
 mkdir -p storage/logs
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/public
 
-# Create a diagnostic file to test PHP independently of Laravel
-echo "<?php phpinfo();" > /var/www/public/test_php.php
-chown www-data:www-data /var/www/public/test_php.php
+# Check APP_KEY
+if [ -z "$APP_KEY" ]; then
+    echo "!! ERROR: APP_KEY is missing. Laravel will crash."
+    echo "!! Please set APP_KEY in the Render dashboard."
+else
+    echo "=> APP_KEY detected."
+fi
 
-# Run migrations with a retry loop
-echo "Attempting to run migrations..."
-for i in {1..5}; do
-    if php artisan migrate --force --no-interaction; then
-        echo "Migrations successful."
-        break
-    else
-        echo "Migration attempt $i failed, retrying in 5s..."
-        sleep 5
-    fi
-done
+# Database Initialization
+echo "=> Running migrations (attempting connection)..."
+# We try to migrate, but we don't 'set -e' for this specifically to avoid early exit if DB is slow
+php artisan migrate --force --no-interaction || echo "!! WARNING: Migration failed. This might be due to DB connectivity."
 
-# Cache clear and config
-echo "Optimizing Laravel..."
-php artisan config:cache || echo "Config cache failed"
-php artisan route:cache || echo "Route cache failed"
-php artisan view:cache || echo "View cache failed"
+# Optimization
+echo "=> Optimizing Laravel environment..."
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+# Note: In production containers, we clear rather than cache to avoid env var capture during build
 php artisan storage:link || true
 
-# Enable PHP-FPM error logging to stdout
-sed -i 's/;error_log = log\/php-fpm.log/error_log = \/proc\/self\/fd\/2/g' /usr/local/etc/php-fpm.conf
-
-# Start PHP-FPM in background
-echo "Starting PHP-FPM..."
+# Start Processes
+echo "=> Starting PHP-FPM..."
 php-fpm -D
 
-# Start Nginx in foreground
-echo "Starting Nginx..."
+echo "=> Environment ready. Launching Nginx..."
+# Tail the logs in background so they appear in Render console
+tail -f storage/logs/laravel.log 2>/dev/null &
+
 exec nginx -g "daemon off;"
