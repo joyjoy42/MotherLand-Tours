@@ -16,6 +16,8 @@ services:
           property: host
       - key: SESSION_DRIVER
         value: file
+      - key: LOG_CHANNEL
+        value: stderr
       - key: CACHE_STORE
         value: file
       - key: QUEUE_CONNECTION
