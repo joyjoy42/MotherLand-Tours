@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactSubmitted;
+use App\Mail\ReservationSubmitted;
+use App\Mail\DevisSubmitted;
 
 Route::get('/', function () {
     return view('home');
@@ -29,12 +34,6 @@ Route::get('/contact', function () {
 Route::get('/devis', function () {
     return view('devis');
 });
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactSubmitted;
-use App\Mail\ReservationSubmitted;
-use App\Mail\DevisSubmitted;
 
 // Form Handlers
 Route::post('/contact', function (Request $request) {

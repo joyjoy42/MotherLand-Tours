@@ -4,7 +4,7 @@
 <!-- Premium Header -->
 <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth text-center">
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('brain/8bd95da3-6fe3-4127-b326-245d37926d3c/porte_du_non_retour_night_1773187323558.png') }}" class="w-full h-full object-cover opacity-10" alt="Devis Hero">
+        <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover opacity-10" alt="Devis Hero">
         <div class="absolute inset-0 bg-mother-earth/70"></div>
     </div>
     
