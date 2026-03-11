@@ -15,6 +15,10 @@
             "dest": "/api/phpinfo.php"
         },
         {
+            "src": "/api/artisan",
+            "dest": "/api/artisan.php"
+        },
+        {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
         },
@@ -29,9 +33,10 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "LOG_CHANNEL": "stderr",
-        "ASSET_URL": "/",
+        "APP_URL": "https://mother-land-tours.vercel.app",
+        "ASSET_URL": "https://mother-land-tours.vercel.app",
         "VIEW_COMPILED_PATH": "/tmp",
         "SESSION_DRIVER": "cookie",
         "CACHE_STORE": "array",
