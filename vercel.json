@@ -1,13 +1,19 @@
 {
-    "version": 2,
-    "outputDirectory": "public",
     "builds": [
         {
             "src": "api/index.php",
             "use": "vercel-php@0.9.0"
+        },
+        {
+            "src": "api/phpinfo.php",
+            "use": "vercel-php@0.9.0"
         }
     ],
     "routes": [
+        {
+            "src": "/api/phpinfo",
+            "dest": "/api/phpinfo.php"
+        },
         {
             "src": "/(css|js|images|fonts|build|assets)/(.*)",
             "dest": "/public/$1/$2"
