@@ -15,7 +15,11 @@
             "dest": "/api/phpinfo.php"
         },
         {
-            "src": "/(css|js|images|fonts|build|assets)/(.*)",
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(css|js|images|fonts|assets)/(.*)",
             "dest": "/public/$1/$2"
         },
         {
@@ -27,6 +31,7 @@
         "APP_ENV": "production",
         "APP_DEBUG": "true",
         "LOG_CHANNEL": "stderr",
+        "ASSET_URL": "/",
         "VIEW_COMPILED_PATH": "/tmp",
         "SESSION_DRIVER": "cookie",
         "CACHE_STORE": "array",
