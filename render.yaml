@@ -16,6 +16,10 @@ services:
           property: host
       - key: SESSION_DRIVER
         value: file
+      - key: CACHE_STORE
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
       - key: APP_KEY
         placeholder: Paste your base64 APP_KEY here
       - key: DB_CONNECTION
