@@ -2,14 +2,11 @@
 
 use Illuminate\Http\Request;
 
-// 1. Extreme Diagnostics
+// 1. Diagnostics & Environment Setup
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-echo "<!-- VERCEL BOOTSTRAP START -->\n";
-echo "<!-- PHP: " . phpversion() . " -->\n";
-
-// 2. Setup Storage in /tmp
+// 2. Storage Setup (Vercel has a read-only filesystem except for /tmp)
 $storagePath = '/tmp/storage';
 $dirs = [
     $storagePath,
@@ -25,41 +22,34 @@ foreach ($dirs as $dir) {
     }
 }
 
-// 3. Autoload
+// 3. Load Autoloader & App
 require __DIR__ . '/../vendor/autoload.php';
 
-try {
-    // 4. App Creation
-    /** @var \Illuminate\Foundation\Application $app */
-    $app = require __DIR__ . '/../bootstrap/app.php';
-    $app->useStoragePath($storagePath);
-    
-    echo "<!-- App instantiated -->\n";
-    
-    // Explicitly check for View service
-    if (!$app->bound('view')) {
-        echo "<!-- WARNING: View service NOT bound. Force registering ViewServiceProvider... -->\n";
-        $app->register(\Illuminate\View\ViewServiceProvider::class);
-    }
-    
-    // Ensure APP_KEY is set in config even if env() fails
-    if (!$app->make('config')->get('app.key')) {
-        $app->make('config')->set('app.key', getenv('APP_KEY'));
-    }
+/** @var \Illuminate\Foundation\Application $app */
+$app = require __DIR__ . '/../bootstrap/app.php';
 
-    // 5. Handle Request
+// 4. Overrides for Vercel Serverless Environment
+// Point storage to the writable /tmp directory
+$app->useStoragePath($storagePath);
+
+// IMPORTANT: Force Laravel to ignore the cached services/packages files.
+// These are often generated during the build process with absolute paths that
+// might not match the runtime path, causing "Target class [view] does not exist".
+$app->setCachedServicesPath("$storagePath/framework/services.php");
+$app->setCachedPackagesPath("$storagePath/framework/packages.php");
+$app->setCachedConfigPath("$storagePath/framework/config.php");
+$app->setCachedRoutesPath("$storagePath/framework/routes.php");
+
+// 5. Handle the request
+try {
     $app->handleRequest(Request::capture());
-    
 } catch (\Throwable $e) {
-    echo "<h1>Critical Error</h1>";
+    // Reveal the true root cause if it still fails
+    echo "<h1>Critical Error during Request</h1>";
     echo "<p><b>[" . get_class($e) . "]</b>: " . $e->getMessage() . "</p>";
     echo "<p>at " . $e->getFile() . ":" . $e->getLine() . "</p>";
-    
-    $prev = $e;
-    while ($prev = $prev->getPrevious()) {
-        echo "<hr><p><b>Previous [" . get_class($prev) . "]</b>: " . $prev->getMessage() . "</p>";
-        echo "<p>at " . $prev->getFile() . ":" . $prev->getLine() . "</p>";
+    if ($prev = $e->getPrevious()) {
+        echo "<hr><p><b>Previous</b>: " . $prev->getMessage() . "</p>";
     }
-    
     echo "<h2>Stack Trace</h2><pre>" . $e->getTraceAsString() . "</pre>";
 }
