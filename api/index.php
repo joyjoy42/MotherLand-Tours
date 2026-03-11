@@ -14,6 +14,7 @@ $dirs = [
     "$storagePath/framework/views",
     "$storagePath/framework/cache",
     "$storagePath/framework/sessions",
+    "$storagePath/bootstrap", // For cached bootstrap files
     "$storagePath/logs"
 ];
 foreach ($dirs as $dir) {
@@ -22,23 +23,20 @@ foreach ($dirs as $dir) {
     }
 }
 
-// 3. Load Autoloader & App
+// 3. Set Environment Variables for Path Overrides
+// These are used by Illuminate\Foundation\Application::normalizeCachePath
+$_ENV['LARAVEL_STORAGE_PATH'] = $storagePath;
+$_ENV['APP_SERVICES_CACHE'] = "$storagePath/bootstrap/services.php";
+$_ENV['APP_PACKAGES_CACHE'] = "$storagePath/bootstrap/packages.php";
+$_ENV['APP_CONFIG_CACHE'] = "$storagePath/bootstrap/config.php";
+$_ENV['APP_ROUTES_CACHE'] = "$storagePath/bootstrap/routes.php";
+$_ENV['APP_EVENTS_CACHE'] = "$storagePath/bootstrap/events.php";
+
+// 4. Load Autoloader & App
 require __DIR__ . '/../vendor/autoload.php';
 
 /** @var \Illuminate\Foundation\Application $app */
 $app = require __DIR__ . '/../bootstrap/app.php';
-
-// 4. Overrides for Vercel Serverless Environment
-// Point storage to the writable /tmp directory
-$app->useStoragePath($storagePath);
-
-// IMPORTANT: Force Laravel to ignore the cached services/packages files.
-// These are often generated during the build process with absolute paths that
-// might not match the runtime path, causing "Target class [view] does not exist".
-$app->setCachedServicesPath("$storagePath/framework/services.php");
-$app->setCachedPackagesPath("$storagePath/framework/packages.php");
-$app->setCachedConfigPath("$storagePath/framework/config.php");
-$app->setCachedRoutesPath("$storagePath/framework/routes.php");
 
 // 5. Handle the request
 try {
