@@ -42,6 +42,8 @@ echo "=> Starting PHP-FPM..."
 # Ensure PHP errors are sent to stderr so Render captures them
 sed -i 's/;catch_workers_output = yes/catch_workers_output = yes/g' /usr/local/etc/php-fpm.d/www.conf || true
 sed -i 's/;php_admin_flag\[log_errors\] = on/php_admin_flag[log_errors] = on/g' /usr/local/etc/php-fpm.d/www.conf || true
+# CRITICAL: Allow PHP workers to access Render environment variables
+sed -i 's/;clear_env = no/clear_env = no/g' /usr/local/etc/php-fpm.d/www.conf || true
 
 php-fpm -D
 
