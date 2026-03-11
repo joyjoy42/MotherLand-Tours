@@ -39,10 +39,14 @@ php artisan storage:link || true
 
 # Start Processes
 echo "=> Starting PHP-FPM..."
+# Ensure PHP errors are sent to stderr so Render captures them
+sed -i 's/;catch_workers_output = yes/catch_workers_output = yes/g' /usr/local/etc/php-fpm.d/www.conf || true
+sed -i 's/;php_admin_flag\[log_errors\] = on/php_admin_flag[log_errors] = on/g' /usr/local/etc/php-fpm.d/www.conf || true
+
 php-fpm -D
 
 echo "=> Environment ready. Launching Nginx..."
-# Tail the logs in background so they appear in Render console
-tail -f storage/logs/laravel.log 2>/dev/null &
+# Tail both Laravel logs and PHP-FPM logs
+tail -n 100 -f storage/logs/laravel.log /var/log/php-fpm.log 2>/dev/null &
 
 exec nginx -g "daemon off;"
