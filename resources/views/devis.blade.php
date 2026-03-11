@@ -39,12 +39,6 @@
             </div>
 
             <div class="premium-card p-12 lg:p-24 border-none shadow-2xl shadow-mother-terracotta/5 section-reveal bg-white">
-                @if(session('success'))
-                    <div class="bg-emerald-50 text-emerald-700 p-10 rounded-3xl mb-16 flex items-center gap-8 border border-emerald-100 animate-slide-up">
-                        <i class="fas fa-check-circle text-3xl"></i>
-                        <p class="font-bold text-lg">{{ session('success') }}</p>
-                    </div>
-                @endif
                 <form action="/devis" method="POST" id="devisForm">
                     @csrf
                     

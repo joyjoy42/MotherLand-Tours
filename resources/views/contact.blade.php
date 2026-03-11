@@ -63,13 +63,6 @@
             <!-- Form Section -->
             <div class="section-reveal">
                 <div class="premium-card p-12 lg:p-20 border-none shadow-2xl shadow-mother-terracotta/5 bg-white">
-                    @if(session('success'))
-                        <div class="bg-emerald-50 text-emerald-700 p-10 rounded-3xl mb-16 flex items-center gap-8 animate-slide-up">
-                            <i class="fas fa-check-circle text-3xl"></i>
-                            <p class="font-bold text-lg">{{ session('success') }}</p>
-                        </div>
-                    @endif
-
                     <h3 class="text-4xl font-display text-mother-earth mb-6 leading-tight">Envoyez-nous un message</h3>
                     <p class="text-slate-500 mb-16 text-lg leading-loose">Nous revenons vers vous avec une proposition sous 24 heures maximum.</p>
 

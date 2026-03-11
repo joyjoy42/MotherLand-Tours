@@ -25,6 +25,16 @@ else
 fi
 
 # Database Initialization
+echo "=> Checking Database connection..."
+# Wait for the DB to be ready
+MAX_RETRIES=5
+COUNT=0
+until php artisan db:show > /dev/null 2>&1 || [ $COUNT -eq $MAX_RETRIES ]; do
+    echo "=> Waiting for database... ($((COUNT+1))/$MAX_RETRIES)"
+    sleep 2
+    COUNT=$((COUNT+1))
+done
+
 echo "=> Running migrations (attempting connection)..."
 # We try to migrate, but we don't 'set -e' for this specifically to avoid early exit if DB is slow
 php artisan migrate --force --no-interaction || echo "!! WARNING: Migration failed. This might be due to DB connectivity."

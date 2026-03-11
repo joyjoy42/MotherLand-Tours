@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "outputDirectory": "public",
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.7.0"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(css|js|images|fonts|build)/(.*)",
+            "dest": "/public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ]
+}

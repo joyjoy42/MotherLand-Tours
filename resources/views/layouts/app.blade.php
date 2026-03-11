@@ -39,6 +39,37 @@
         </div>
     </nav>
 
+    <!-- Notification Toasts -->
+    <div class="fixed top-24 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md px-4 pointer-events-none">
+        @if(session('success'))
+            <div class="bg-mother-earth text-white px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-4 animate-slide-up pointer-events-auto">
+                <i class="fas fa-check-circle text-mother-terracotta"></i>
+                <p class="text-sm font-medium">{{ session('success') }}</p>
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="bg-red-600 text-white px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-4 animate-slide-up pointer-events-auto">
+                <i class="fas fa-exclamation-circle text-white"></i>
+                <p class="text-sm font-medium">{{ session('error') }}</p>
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="bg-red-600 text-white px-8 py-4 rounded-3xl shadow-2xl flex flex-col gap-2 animate-slide-up pointer-events-auto">
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-exclamation-triangle text-white"></i>
+                    <p class="text-sm font-bold">Veuillez corriger les erreurs suivantes :</p>
+                </div>
+                <ul class="text-xs opacity-90 pl-10 list-disc">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    </div>
+
     <main>
         @yield('content')
     </main>
