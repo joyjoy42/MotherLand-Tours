@@ -1,82 +1,113 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Smokey Header for About -->
-<section style="position: relative; background: url('/images/packs-hero.jpg') center/cover no-repeat; padding: 120px 0; color: white; text-align: center;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 1;"></div>
-    <div class="container" style="position: relative; z-index: 2;">
-        <span class="badge-yellow" style="margin-bottom: 20px; display: inline-block;">L'ÉQUIPE</span>
-        <h1 style="font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 24px;">À Propos <span>de Nous</span></h1>
-        <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Une équipe de passionnés dédiée à la valorisation du patrimoine béninois.</p>
+<!-- Premium Header -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth text-center">
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover opacity-10" alt="About Hero">
+        <div class="absolute inset-0 bg-mother-earth/70"></div>
+    </div>
+    
+    <div class="container relative z-10 px-6 animate-fade-in py-32">
+        <span class="text-mother-terracotta font-bold tracking-[0.5em] uppercase text-xs mb-8 block">Notre Essence</span>
+        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
+            L'Âme de <br/><span class="text-mother-terracotta italic underline decoration-white/10 underline-offset-16">Motherland</span> Tours.
+        </h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-loose text-balance">
+            Plus qu'une agence, une passerelle émotionnelle vers les racines oubliées et les trésors cachés du Bénin.
+        </p>
     </div>
 </section>
 
-<section class="section-padding" style="background: white;">
+<section class="section-padding bg-white relative">
     <div class="container">
         <!-- Mission Section -->
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px;">
-            <div class="animate-fade">
-                <h2 style="font-size: 2.8rem; margin-bottom: 32px; line-height: 1.2;">Notre <span>Mission</span> Fondatrice</h2>
-                <p style="font-size: 1.15rem; color: #475569; margin-bottom: 24px; line-height: 1.8;">Motherland Tours est née d'un désir profond : reconnecter le monde, et particulièrement la diaspora, à l'incroyable richesse culturelle et historique du Bénin.</p>
-                <p style="font-size: 1.15rem; color: #475569; line-height: 1.8;">Nous ne nous contentons pas d'organiser des voyages ; nous créons des ponts de compréhension, de respect et d'émerveillement à travers des expériences authentiques et immersives.</p>
+        <div class="grid lg:grid-cols-2 gap-32 items-center mb-56 section-reveal py-16">
+            <div>
+                <span class="text-mother-terracotta font-bold text-xs uppercase tracking-[0.2em] mb-8 block">Notre Genèse</span>
+                <h2 class="text-5xl lg:text-6xl font-display text-mother-earth mb-12 leading-tight">Une mission de <span class="italic text-mother-terracotta">Reconnexion</span> culturelle.</h2>
+                <div class="space-y-8 text-slate-500 text-xl leading-loose text-balance">
+                    <p>Motherland Tours est née d'un désir profond : briser les murs de l'oubli et inviter le monde à découvrir le Bénin dans sa vérité la plus pure. Nous croyons que le voyage est le plus puissant vecteur de compréhension mutuelle.</p>
+                    <p>Nous créons des expériences qui vont au-delà du simple tourisme. C'est une immersion dans l'histoire des puissants royaumes fon et yoruba, un dialogue spirituel avec les traditions vaudou, et une célébration vibrante de la vie contemporaine béninoise, entre art moderne et marchés colorés.</p>
+                </div>
             </div>
-            <div style="position: relative;" class="animate-fade">
-                <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: var(--primary); border-radius: 40px; z-index: -1; opacity: 0.1;"></div>
-                <img src="{{ asset('images/culture.jpg') }}" class="rounded-img" style="width: 100%; height: 500px; object-fit: cover;" alt="Culture Béninoise">
+            <div class="relative group">
+                <div class="absolute -inset-8 bg-mother-terracotta/5 rounded-[4rem] -rotate-6 group-hover:rotate-0 transition-premium duration-1000"></div>
+                <img src="{{ asset('images/assets/abomey.png') }}" class="relative z-10 w-full h-[700px] object-cover rounded-[3.5rem] shadow-2xl shadow-mother-terracotta/10" alt="Vue rapprochée des détails architecturaux des palais royaux d'Abomey">
             </div>
         </div>
 
         <!-- Values -->
-        <div class="section-header">
-            <h2>Les Valeurs Qui Nous Marient</h2>
+        <div class="text-center mb-32 section-reveal">
+            <h2 class="text-5xl font-display text-mother-earth leading-tight">L'Éthique au cœur <br/>du <span class="text-mother-terracotta italic">Voyage.</span></h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-bottom: 120px;">
-            <div class="premium-card" style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: #fff1f2; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; color: #e11d48;">
-                    <i class="fas fa-heart" style="font-size: 2rem;"></i>
+        <div class="grid lg:grid-cols-4 gap-10 mb-56 section-reveal">
+            <div class="premium-card text-center group border-none shadow-mother-terracotta/5">
+                <div class="w-20 h-20 bg-mother-terracotta/5 text-mother-terracotta rounded-2xl flex items-center justify-center mx-auto mb-10 text-3xl group-hover:bg-mother-terracotta group-hover:text-white transition-premium">
+                    <i class="fas fa-heart"></i>
                 </div>
-                <h4 style="font-size: 1.3rem; margin-bottom: 16px;">Authenticité</h4>
-                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">Nous évitons les circuits de masse pour vous offrir un Bénin vrai, pur et sans fard.</p>
+                <h4 class="text-xl mb-6 text-mother-earth">Authenticité</h4>
+                <p class="text-slate-500 text-sm leading-loose">Pas de mise en scène. Nous vous emmenons là où le Bénin respire vraiment.</p>
             </div>
-            <div class="premium-card" style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: #eff6ff; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; color: #2563eb;">
-                    <i class="fas fa-shield-halved" style="font-size: 2rem;"></i>
+            <div class="premium-card text-center group border-none shadow-mother-terracotta/5">
+                <div class="w-20 h-20 bg-mother-terracotta/5 text-mother-terracotta rounded-2xl flex items-center justify-center mx-auto mb-10 text-3xl group-hover:bg-mother-terracotta group-hover:text-white transition-premium">
+                    <i class="fas fa-shield-check"></i>
                 </div>
-                <h4 style="font-size: 1.3rem; margin-bottom: 16px;">Sécurité</h4>
-                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">Votre tranquillité d'esprit est assurée par une présence et un support constant durant tout le séjour.</p>
+                <h4 class="text-xl mb-6 text-mother-earth">Excellence</h4>
+                <p class="text-slate-500 text-sm leading-loose">Un standard de confort et de sécurité exigeant pour chaque voyageur.</p>
             </div>
-            <div class="premium-card" style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: #ecfdf5; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; color: #059669;">
-                    <i class="fas fa-handshake" style="font-size: 2rem;"></i>
+            <div class="premium-card text-center group border-none shadow-mother-terracotta/5">
+                <div class="w-20 h-20 bg-mother-terracotta/5 text-mother-terracotta rounded-2xl flex items-center justify-center mx-auto mb-10 text-3xl group-hover:bg-mother-terracotta group-hover:text-white transition-premium">
+                    <i class="fas fa-leaf"></i>
                 </div>
-                <h4 style="font-size: 1.3rem; margin-bottom: 16px;">Partage</h4>
-                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">Nous encourageons les échanges sincères entre les voyageurs et les habitants locaux.</p>
+                <h4 class="text-xl mb-6 text-mother-earth">Impact Local</h4>
+                <p class="text-slate-500 text-sm leading-loose">Chaque voyage soutient directement l'économie et les artisans béninois.</p>
             </div>
-            <div class="premium-card" style="text-align: center;">
-                <div style="width: 80px; height: 80px; background: #fffbeb; border-radius: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; color: #f59e0b;">
-                    <i class="fas fa-crown" style="font-size: 2rem;"></i>
+            <div class="premium-card text-center group border-none shadow-mother-terracotta/5">
+                <div class="w-20 h-20 bg-mother-terracotta/5 text-mother-terracotta rounded-2xl flex items-center justify-center mx-auto mb-10 text-3xl group-hover:bg-mother-terracotta group-hover:text-white transition-premium">
+                    <i class="fas fa-gem"></i>
                 </div>
-                <h4 style="font-size: 1.3rem; margin-bottom: 16px;">Excellence</h4>
-                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">Une sélection rigoureuse des meilleurs hébergements et prestataires locaux.</p>
+                <h4 class="text-xl mb-6 text-mother-earth">Héritage</h4>
+                <p class="text-slate-500 text-sm leading-loose">Préserver, valoriser et transmettre la richesse de l'histoire africaine pour les générations futures.</p>
+            </div>
+        </div>
+
+        <!-- Cultural Heritage Deep Dive -->
+        <div class="grid lg:grid-cols-2 gap-24 items-center mb-56 section-reveal">
+             <div class="order-2 lg:order-1">
+                <img src="{{ asset('images/assets/ganvie.png') }}" class="w-full h-[600px] object-cover rounded-[3.5rem] shadow-2xl" alt="Vue d'ensemble du village traditionnel de Ganvié sur l'eau">
+            </div>
+            <div class="order-1 lg:order-2">
+                <span class="text-mother-teal font-bold text-xs uppercase tracking-[0.2em] mb-8 block">Le Savoir-Faire</span>
+                <h2 class="text-5xl font-display text-mother-earth mb-12 leading-tight">Un Patrimoine <br/><span class="italic text-mother-teal">Vivant.</span></h2>
+                <div class="space-y-8 text-slate-500 text-lg leading-loose">
+                    <p>Du sud lagunaire aux montagnes du nord, le Bénin est une mosaïque de peuples et de traditions. Nous vous faisons découvrir l'artisanat ancestral : la forge d'Abomey, les tissages de Porto-Novo et les teintures naturelles du nord.</p>
+                    <p>Notre approche inclut des rencontres privilégiées avec les gardiens des traditions, permettant de comprendre la philosophie profonde qui anime le quotidien des Béninois.</p>
+                </div>
             </div>
         </div>
 
         <!-- Vision -->
-        <div style="background: var(--dark); border-radius: 40px; padding: 100px 64px; text-align: center; color: white; margin-bottom: 120px; position: relative; overflow: hidden;">
-            <div style="position: absolute; right: -50px; top: -50px; width: 250px; height: 250px; background: var(--primary); border-radius: 50%; opacity: 0.1;"></div>
-            <h2 style="color: white; font-size: 2.8rem; margin-bottom: 40px;">Notre Vision 2030</h2>
-            <p style="max-width: 850px; margin: 0 auto 32px; font-size: 1.25rem; color: #cbd5e1; line-height: 1.8;">Nous aspirons à devenir la plateforme de référence pour le tourisme responsable et culturel en Afrique de l'Ouest. Notre but est de prouver que le voyage peut être un moteur de développement local tout en offrant une aventure humaine sans précédent.</p>
-            <p style="max-width: 850px; margin: 0 auto; font-size: 1.25rem; color: #cbd5e1; line-height: 1.8; font-weight: 600;">Le Bénin ne se visite pas, il se vit.</p>
+        <div class="bg-mother-earth p-16 lg:p-32 rounded-[5rem] relative overflow-hidden section-reveal text-center mb-56 shadow-2xl shadow-mother-terracotta/10">
+            
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <span class="text-mother-terracotta font-bold tracking-[0.4em] text-xs uppercase mb-10 block">Horizon 2030</span>
+                <h2 class="text-5xl lg:text-7xl text-white font-display mb-12 leading-tight">Le Bénin ne se visite pas, <br/><span class="italic text-mother-terracotta">il se vit.</span></h2>
+                <div class="space-y-10 text-slate-300 text-2xl leading-loose text-balance px-4 lg:px-20">
+                    <p>Nous aspirons à devenir la référence absolue du tourisme culturel conscient en Afrique de l'Ouest. Notre vision est celle d'un monde où le voyage transforme autant le voyageur que la terre qui l'accueille.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Team -->
-        <div class="section-header">
-            <h2>Une Équipe dévouée</h2>
+        <div class="text-center mb-24 section-reveal">
+            <span class="text-mother-terracotta font-bold text-xs uppercase tracking-widest mb-6 block">Nos Experts</span>
+            <h2 class="text-5xl font-display text-mother-earth">Une Équipe dévouée</h2>
         </div>
         
-        <div class="premium-card" style="text-align: center; padding: 64px; max-width: 900px; margin-inline: auto;">
-            <p style="font-size: 1.15rem; color: #475569; line-height: 2;">Chaque membre de Motherland Tours est un ambassadeur de la culture béninoise. Nos guides sont tous certifiés et natifs du pays, garantissant une connaissance ésotérique des lieux et des coutumes. <br><br> De la logistique au support terrain, nous sommes là pour transformer votre projet de voyage en un chef-d'œuvre de souvenirs.</p>
+        <div class="premium-card max-w-5xl mx-auto mb-32 section-reveal border-none shadow-mother-terracotta/5 bg-white/50 backdrop-blur-sm">
+            <p class="text-xl text-slate-600 leading-loose text-balance text-center">Chaque membre de Motherland Tours est un ambassadeur de la culture béninoise. Nos guides sont tous certifiés et natifs du pays, garantissant une connaissance ésotérique des lieux et des coutumes. <br><br> De la logistique au support terrain, nous sommes là pour transformer votre projet de voyage en un chef-d'œuvre de souvenirs.</p>
         </div>
     </div>
 </section>

@@ -1,109 +1,134 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Smokey Header for Contact -->
-<section style="position: relative; background: url('/images/packs-hero.jpg') center/cover no-repeat; padding: 120px 0; color: white; text-align: center;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 1;"></div>
-    <div class="container" style="position: relative; z-index: 2;">
-        <span class="badge-yellow" style="margin-bottom: 20px; display: inline-block;">CONTACT</span>
-        <h1 style="font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 24px;">Parlons de Votre <span style="color: var(--color-mother-terracotta);">Projet</span></h1>
-        <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Notre équipe est à votre entière disposition pour faire de votre voyage une réussite totale.</p>
+<!-- Premium Header -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth text-center">
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('brain/8bd95da3-6fe3-4127-b326-245d37926d3c/porte_du_non_retour_night_1773187323558.png') }}" class="w-full h-full object-cover opacity-10" alt="Contact Hero">
+        <div class="absolute inset-0 bg-mother-earth/70"></div>
+    </div>
+    
+    <div class="container relative z-10 px-6 animate-fade-in py-32">
+        <span class="text-mother-terracotta font-bold tracking-[0.5em] uppercase text-xs mb-8 block">Contact</span>
+        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
+            Parlons de votre <br/><span class="text-mother-terracotta italic underline decoration-white/10 underline-offset-16">Prochaine</span> Escale.
+        </h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-loose text-balance">
+            Notre équipe de conciergerie est à votre écoute pour transformer vos désirs de voyage en une réalité inoubliable.
+        </p>
     </div>
 </section>
 
-<section class="section-padding bg-grain" style="background: white;">
+<section class="section-padding bg-slate-50 relative">
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start;">
-            <!-- Contact Info Sidebar -->
-            <div style="display: grid; gap: 32px;">
-                <div class="premium-card" style="display: flex; gap: 24px; align-items: center; padding: 24px 32px;">
-                    <div style="width: 56px; height: 56px; background: var(--color-primary-light); border-radius: 18px; display: flex; align-items: center; justify-content: center; color: var(--color-mother-navy); font-size: 1.5rem; flex-shrink: 0;">
-                        <i class="fas fa-envelope"></i>
+        <div class="grid lg:grid-cols-2 gap-20 items-start">
+            <!-- Contact Info -->
+            <div class="space-y-10 section-reveal">
+                <!-- Direct Email -->
+                <div class="premium-card group hover:shadow-2xl hover:shadow-mother-terracotta/5 border-none p-10 flex items-center gap-8 bg-white/50 backdrop-blur-sm">
+                    <div class="w-20 h-20 bg-mother-terracotta/5 text-mother-terracotta rounded-2xl flex items-center justify-center text-3xl group-hover:bg-mother-terracotta group-hover:text-white transition-premium duration-500">
+                        <i class="fas fa-envelope-open"></i>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Email Direct</h4>
-                        <p style="font-size: 0.95rem; color: #475569;"><a href="mailto:motherlandtours9@gmail.com" style="color: inherit; text-decoration: none;">motherlandtours9@gmail.com</a></p>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] block mb-2">Email Direct</span>
+                        <p class="text-2xl font-display font-bold text-mother-earth">motherlandtours9@gmail.com</p>
                     </div>
                 </div>
 
-                <div class="premium-card" style="display: flex; gap: 24px; align-items: center; padding: 24px 32px;">
-                    <div style="width: 56px; height: 56px; background: #ecfdf5; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #059669; font-size: 1.5rem; flex-shrink: 0;">
-                        <i class="fas fa-phone"></i>
+                <!-- Call Center -->
+                <div class="premium-card group hover:shadow-2xl hover:shadow-mother-terracotta/5 border-none p-10 flex items-center gap-8 bg-white/50 backdrop-blur-sm">
+                    <div class="w-20 h-20 bg-mother-terracotta/5 text-mother-terracotta rounded-2xl flex items-center justify-center text-3xl group-hover:bg-mother-terracotta group-hover:text-white transition-premium duration-500">
+                        <i class="fas fa-headset"></i>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Standard Téléphonique</h4>
-                        <p style="font-size: 0.95rem; color: #475569;"><a href="tel:+2290148803613" style="color: inherit; text-decoration: none;">+229 0148803613</a></p>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] block mb-2">Standard</span>
+                        <p class="text-2xl font-display font-bold text-mother-earth">+229 0148803613</p>
                     </div>
                 </div>
 
-                <div class="premium-card" style="display: flex; gap: 24px; align-items: center; padding: 24px 32px;">
-                    <div style="width: 56px; height: 56px; background: #fffbeb; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #d97706; font-size: 1.5rem; flex-shrink: 0;">
-                        <i class="fab fa-whatsapp"></i>
+                <!-- WhatsApp Card - Highlighted -->
+                <div class="bg-mother-earth p-12 lg:p-16 rounded-[4rem] relative overflow-hidden group shadow-2xl shadow-mother-terracotta/10">
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-white/10 text-white rounded-2xl flex items-center justify-center text-3xl mb-10 border border-white/10">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="text-3xl text-white mb-6 leading-tight">Besoin d'une réponse instantanée ?</h3>
+                        <p class="text-slate-300 text-lg mb-12 leading-loose">Notre équipe est disponible sur WhatsApp pour vous accompagner en temps réel sur tous vos projets.</p>
+                        <a href="https://wa.me/22948803613" target="_blank" class="btn btn-cta w-full py-6 rounded-2xl shadow-2xl shadow-mother-terracotta/20">Démarrer une discussion</a>
                     </div>
-                    <div>
-                        <h4 style="font-size: 1.05rem; margin-bottom: 4px;">WhatsApp Business</h4>
-                        <p style="font-size: 0.95rem; color: #475569;"><a href="https://wa.me/22948803613" style="color: inherit; text-decoration: none;">+229 48803613</a></p>
-                    </div>
-                </div>
-
-                <!-- Teal Highlight Box -->
-                <div style="background: var(--color-mother-teal); border-radius: var(--radius-lg); padding: 48px 32px; text-align: center; color: white; box-shadow: 0 20px 40px -10px rgba(2, 106, 92, 0.3);">
-                    <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; font-size: 2.22rem;">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3 style="color: white; margin-bottom: 16px; font-size: 1.8rem;">Réponse Immédiate</h3>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 32px; font-size: 1rem; line-height: 1.6;">Pour toute urgence ou question rapide, notre service conciergerie est disponible en direct.</p>
-                    <a href="https://wa.me/22948803613" target="_blank" class="btn" style="background: white; color: var(--color-mother-teal); width: 100%; border-radius: var(--radius-md);">OUVRIR LA CONVERSATION</a>
                 </div>
             </div>
 
-            <div>
-                <div class="premium-card">
+            <!-- Form Section -->
+            <div class="section-reveal">
+                <div class="premium-card p-12 lg:p-20 border-none shadow-2xl shadow-mother-terracotta/5 bg-white">
                     @if(session('success'))
-                        <div style="background: #ecfdf5; color: #065f46; padding: 20px; border-radius: var(--radius-md); margin-bottom: 32px; border: 1px solid #10b981; display: flex; align-items: center; gap: 15px;">
-                            <i class="fas fa-check-circle" style="font-size: 1.5rem;"></i>
-                            <p style="margin: 0; font-weight: 600;">{{ session('success') }}</p>
+                        <div class="bg-emerald-50 text-emerald-700 p-10 rounded-3xl mb-16 flex items-center gap-8 animate-slide-up">
+                            <i class="fas fa-check-circle text-3xl"></i>
+                            <p class="font-bold text-lg">{{ session('success') }}</p>
                         </div>
                     @endif
-                    <h3 style="margin-bottom: 40px; font-family: 'Outfit'; color: var(--dark); font-size: 1.8rem;">Laissez-nous un message</h3>
-                    <form action="/contact" method="POST">
+
+                    <h3 class="text-4xl font-display text-mother-earth mb-6 leading-tight">Envoyez-nous un message</h3>
+                    <p class="text-slate-500 mb-16 text-lg leading-loose">Nous revenons vers vous avec une proposition sous 24 heures maximum.</p>
+
+                    <form action="/contact" method="POST" class="space-y-8" id="contactForm">
                         @csrf
-                        <div class="form-group">
-                            <label for="name">Votre Nom complet *</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Jean Dupont" required>
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="form-group">
+                                <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-3 block">Nom complet</label>
+                                <input type="text" name="name" class="form-control" placeholder="Ex: Jean Agossou" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-3 block">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="votre@email.com" required>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="email">Adresse Email *</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="votre@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Sujet de votre message *</label>
-                            <select id="subject" name="subject" class="form-control" required>
-                                <option value="resa">Question sur une réservation</option>
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-3 block">Sujet de votre demande</label>
+                            <select name="subject" class="form-control" required>
+                                <option value="resa">Question sur un itinéraire</option>
                                 <option value="devis">Demande de devis sur-mesure</option>
-                                <option value="part">Partenariat</option>
+                                <option value="part">Partenariat & Presse</option>
                                 <option value="autre">Autre demande</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="message">Votre Message *</label>
-                            <textarea id="message" name="message" rows="7" class="form-control" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-3 block">Message</label>
+                            <textarea name="message" rows="6" class="form-control !pt-4" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 20px; font-size: 1.1rem;">ENVOYER LE MESSAGE</button>
+
+                        <button type="submit" id="submitBtn" class="btn btn-cta w-full py-5 text-sm rounded-2xl">Transmettre ma demande</button>
                     </form>
+
+                    <script>
+                        document.getElementById('contactForm').addEventListener('submit', function() {
+                            const btn = document.getElementById('submitBtn');
+                            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Traitement en cours...';
+                            btn.classList.add('opacity-75', 'cursor-not-allowed');
+                        });
+                    </script>
                 </div>
+            </div>
 
                 <!-- Small FAQ & Info Cards -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
-                    <div class="premium-card" style="padding: 24px;">
-                        <h4 style="font-size: 0.95rem; margin-bottom: 12px; color: var(--dark);"><i class="fas fa-clock" style="color: var(--primary); margin-right: 10px;"></i> Horaires</h4>
-                        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 4px;">Lun - Ven : 09h - 18h</p>
-                        <p style="font-size: 0.85rem; color: #64748b;">Samedi : 10h - 16h</p>
+                <div class="grid grid-cols-2 gap-8 mt-12 mb-32 section-reveal">
+                    <div class="premium-card p-8 bg-mother-cream/30 border-none shadow-none group hover:bg-white transition-premium">
+                        <h4 class="text-sm font-bold text-mother-earth uppercase tracking-widest mb-6 flex items-center gap-4">
+                            <i class="fas fa-clock text-mother-terracotta"></i> Horaires
+                        </h4>
+                        <p class="text-slate-500 text-sm mb-2">Lun - Ven : 09h - 18h</p>
+                        <p class="text-slate-500 text-sm">Samedi : 10h - 16h</p>
                     </div>
-                    <div class="premium-card" style="padding: 24px;">
-                        <h4 style="font-size: 0.95rem; margin-bottom: 12px; color: var(--dark);"><i class="fas fa-location-dot" style="color: var(--primary); margin-right: 10px;"></i> Bureau</h4>
-                        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 4px;">Cotonou, Bénin</p>
-                        <p style="font-size: 0.85rem; color: #64748b;">Quartier Haie Vive</p>
+                    <div class="premium-card p-8 bg-mother-cream/30 border-none shadow-none group hover:bg-white transition-premium">
+                        <h4 class="text-sm font-bold text-mother-earth uppercase tracking-widest mb-6 flex items-center gap-4">
+                            <i class="fas fa-location-dot text-mother-terracotta"></i> Bureau
+                        </h4>
+                        <p class="text-slate-500 text-sm mb-2">Cotonou, Bénin</p>
+                        <p class="text-slate-500 text-sm">Quartier Haie Vive</p>
                     </div>
                 </div>
             </div>

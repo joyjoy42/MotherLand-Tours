@@ -1,56 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Smokey Header for Packs -->
-<section style="position: relative; background: url('/images/packs-hero.jpg') center/cover no-repeat; padding: 120px 0; color: white; text-align: center;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 1;"></div>
-    <div class="container" style="position: relative; z-index: 2;">
-        <span class="badge-yellow" style="margin-bottom: 20px; display: inline-block;">NOS OFFRES</span>
-        <h1 style="font-size: 4rem; color: white; margin-bottom: 24px;">Nos <span style="color: var(--color-mother-terracotta);">Packs</span> de Voyage</h1>
-        <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Découvrez nos formules tout-en-un et choisissez celle qui correspond le mieux à votre projet de découverte.</p>
+<!-- Premium Smokey Header -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth">
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover opacity-10" alt="Packs Hero">
+        <div class="absolute inset-0 bg-mother-earth/70"></div>
+    </div>
+    
+    <div class="container relative z-10 px-6 animate-fade-in py-32">
+        <span class="text-mother-terracotta font-bold tracking-[0.5em] uppercase text-xs mb-8 block">Tarifs & Packs</span>
+        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
+            La Liberté de <br/><span class="text-mother-terracotta italic underline decoration-white/10 underline-offset-16">Découvrir</span>.
+        </h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-loose text-balance">
+            Des parcours ciselés pour une immersion sans compromis. Du littoral lacustre aux savanes du Nord, le Bénin se dévoile à vous.
+        </p>
     </div>
 </section>
 
-<!-- Content Section on White -->
-<section class="section-padding bg-grain" style="background: white;">
+<!-- Content Section -->
+<section class="section-padding bg-slate-50 relative">
     <div class="container">
-        <!-- Departure Tabs -->
-        <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 64px; flex-wrap: wrap; background: var(--gray-light); padding: 12px; border-radius: 100px; width: fit-content; margin-inline: auto; box-shadow: var(--shadow-sm);">
-            <button class="nav-item active" style="padding: 14px 28px; cursor: pointer; border: none;" onclick="showPricing('paris')">PARIS</button>
-            <button class="nav-item" style="padding: 14px 28px; cursor: pointer; border: none;" onclick="showPricing('abidjan')">ABIDJAN</button>
-            <button class="nav-item" style="padding: 14px 28px; cursor: pointer; border: none;" onclick="showPricing('maroc')">MAROC</button>
-            <button class="nav-item" style="padding: 14px 28px; cursor: pointer; border: none;" onclick="showPricing('canada')">CANADA</button>
+        <!-- Premium tabs -->
+        <div class="flex justify-center mb-32 section-reveal">
+            <div class="glass p-3 rounded-2xl flex flex-wrap justify-center gap-3 border-mother-terracotta/5 shadow-mother-terracotta/5">
+                <button class="nav-item !px-10 !py-4 !rounded-xl !text-xs !font-bold !tracking-widest active" onclick="showPricing('paris')">VOYAGE DEPUIS PARIS</button>
+                <button class="nav-item !px-10 !py-4 !rounded-xl !text-xs !font-bold !tracking-widest" onclick="showPricing('abidjan')">DEPUIS ABIDJAN</button>
+                <button class="nav-item !px-10 !py-4 !rounded-xl !text-xs !font-bold !tracking-widest" onclick="showPricing('maroc')">DEPUIS MAROC</button>
+                <button class="nav-item !px-10 !py-4 !rounded-xl !text-xs !font-bold !tracking-widest" onclick="showPricing('canada')">DEPUIS CANADA</button>
+            </div>
         </div>
 
         <!-- Pricing Sections -->
         <div id="pricing-paris" class="pricing-section active">
-            @include('partials.pack-table', ['days' => 7, 'prices' => ['1200€', '1050€', '950€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 7, 'prices' => ['1900€', '1750€', '1650€'], 'flights' => true])
             <div style="margin-top: 48px;"></div>
-            @include('partials.pack-table', ['days' => 10, 'prices' => ['1800€', '1600€', '1450€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 10, 'prices' => ['2200€', '1999€', '1950€'], 'flights' => true])
         </div>
 
         <div id="pricing-abidjan" class="pricing-section" style="display: none;">
-            @include('partials.pack-table', ['days' => 7, 'prices' => ['800€', '700€', '650€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 7, 'prices' => ['1700€', '1500€', '1400€'], 'flights' => true])
             <div style="margin-top: 48px;"></div>
-            @include('partials.pack-table', ['days' => 10, 'prices' => ['1200€', '1050€', '950€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 10, 'prices' => ['1900€', '1700€', '1600€'], 'flights' => true])
         </div>
 
         <div id="pricing-maroc" class="pricing-section" style="display: none;">
-            @include('partials.pack-table', ['days' => 7, 'prices' => ['1100€', '950€', '850€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 7, 'prices' => ['2000€', '1700€', '1550€'], 'flights' => true])
             <div style="margin-top: 48px;"></div>
-            @include('partials.pack-table', ['days' => 10, 'prices' => ['1650€', '1450€', '1300€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 10, 'prices' => ['2300€', '1999€', '1950€'], 'flights' => true])
         </div>
 
         <div id="pricing-canada" class="pricing-section" style="display: none;">
-            @include('partials.pack-table', ['days' => 7, 'prices' => ['1500€', '1300€', '1150€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 7, 'prices' => ['2700€', '2200€', '2000€'], 'flights' => true])
             <div style="margin-top: 48px;"></div>
-            @include('partials.pack-table', ['days' => 10, 'prices' => ['2200€', '1950€', '1750€'], 'flights' => true])
+            @include('partials.pack-table', ['days' => 10, 'prices' => ['3000€', '2500€', '2300€'], 'flights' => true])
         </div>
 
-        <!-- Final CTA -->
-        <div style="text-align: center; margin-top: 80px;">
-            <p style="color: #64748b; margin-bottom: 32px;">Vous avez une demande spécifique ? Un budget particulier ?</p>
-            <a href="/devis" class="btn btn-cta" style="padding: 24px 64px; font-size: 1.1rem;">DEMANDER UN DEVIS PERSONNALISÉ</a>
+        <!-- Final Aesthetic CTA -->
+        <div class="mt-32 text-center section-reveal">
+            <div class="inline-block p-12 rounded-[3rem] bg-white shadow-[--shadow-float] max-w-2xl border border-slate-100">
+                <div class="w-16 h-16 bg-mother-terracotta/10 text-mother-terracotta rounded-full flex items-center justify-center mx-auto mb-8 text-2xl">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3 class="text-2xl mb-6">Besoin d'un parcours sur mesure ?</h3>
+                <p class="text-slate-500 mb-10 text-sm leading-relaxed">
+                    Si aucun de ces packs ne correspond parfaitement à votre vision, nos experts créent votre itinéraire de A à Z selon vos envies.
+                </p>
+                <a href="/devis" class="btn btn-cta w-full py-5 rounded-2xl">Lancer mon Devis Personnalisé</a>
+            </div>
         </div>
     </div>
 </section>

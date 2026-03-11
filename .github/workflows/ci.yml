@@ -1,0 +1,49 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, dom, fileinfo, pgsql
+        coverage: none
+
+    - name: Use Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install PHP Dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+    - name: Install Node Dependencies
+      run: npm ci
+
+    - name: Code Quality (Laravel Pint)
+      run: ./vendor/bin/pint --test
+
+    - name: Build Frontend Assets (Vite)
+      run: npm run build
+
+    - name: Trigger Render Deployment
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      env:
+        deploy_hook: ${{ secrets.RENDER_DEPLOY_HOOK }}
+      run: |
+        if [ ! -z "$deploy_hook" ]; then
+          curl -X GET "$deploy_hook"
+        else
+          echo "RENDER_DEPLOY_HOOK secret not set. Skipping auto-deploy."
+        fi

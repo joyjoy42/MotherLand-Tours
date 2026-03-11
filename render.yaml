@@ -3,6 +3,7 @@ services:
     name: motherland-tours
     env: docker
     plan: free
+    preDeployCommand: php artisan migrate --force
     envVars:
       - key: APP_ENV
         value: production

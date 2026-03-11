@@ -1,111 +1,127 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Smokey Header for Reserver -->
-<section style="position: relative; background: url('/images/packs-hero.jpg') center/cover no-repeat; padding: 120px 0; color: white; text-align: center;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 1;"></div>
-    <div class="container" style="position: relative; z-index: 2;">
-        <span class="badge-yellow" style="margin-bottom: 20px; display: inline-block;">RÉSERVATION</span>
-        <h1 style="font-size: 3.5rem; color: white; font-weight: 800; margin-bottom: 24px;">Préparez Votre <span style="color: var(--color-mother-terracotta);">Séjour</span></h1>
-        <p style="color: #cbd5e1; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Remplissez ce formulaire et notre équipe s'occupe de tout pour vous.</p>
+<!-- Premium Header -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth text-center">
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover opacity-10" alt="Reserver Hero">
+        <div class="absolute inset-0 bg-mother-earth/70"></div>
+    </div>
+    
+    <div class="container relative z-10 px-6 animate-fade-in py-32 text-center">
+        <span class="text-mother-terracotta font-bold tracking-[0.5em] uppercase text-xs mb-8 block">Réservation</span>
+        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
+            Réservez votre <br/><span class="text-mother-terracotta italic underline decoration-white/10 underline-offset-16">Evasion</span>.
+        </h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-loose text-balance">
+            Un processus simple pour une aventure extraordinaire. Confirmez votre escapade béninoise en quelques clics.
+        </p>
     </div>
 </section>
 
-<section class="section-padding bg-grain" style="background: white;">
+<section class="section-padding bg-slate-50 relative">
     <div class="container">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <!-- Important Info -->
-            <div style="background: var(--color-primary-light); border-radius: var(--radius-lg); padding: 40px; margin-bottom: 64px; border: 1px solid rgba(230, 144, 77, 0.1); display: flex; gap: 32px; align-items: center;">
-                <div style="width: 64px; height: 64px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--color-mother-terracotta); font-size: 1.8rem; flex-shrink: 0; box-shadow: var(--shadow-ambient);">
-                    <i class="fas fa-info-circle"></i>
+        <div class="max-w-4xl mx-auto">
+            <!-- Premium Info Banner -->
+            <div class="bg-white p-12 lg:p-16 rounded-[4rem] shadow-2xl shadow-mother-terracotta/5 mb-32 flex flex-col lg:flex-row gap-16 items-center border border-mother-terracotta/5 section-reveal">
+                <div class="w-24 h-24 bg-mother-terracotta/10 text-mother-terracotta rounded-3xl flex items-center justify-center text-4xl flex-shrink-0 animate-pulse">
+                    <i class="fas fa-shield-heart"></i>
                 </div>
                 <div>
-                    <h4 style="color: var(--color-mother-navy); margin-bottom: 12px; font-size: 1.2rem;">À savoir avant de réserver :</h4>
-                    <ul style="list-style: none; font-size: 0.95rem; color: #475569; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                        <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i> Pas de paiement immédiat</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i> Confirmation sous 24h</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i> Devis gratuit & sans engagement</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i> Accompagnement personnalisé</li>
+                    <h4 class="text-2xl font-display font-bold text-mother-earth mb-6">Voyagez l'esprit tranquille</h4>
+                    <ul class="grid lg:grid-cols-2 gap-x-12 gap-y-5">
+                        <li class="flex items-center gap-4 text-slate-500 font-bold"><div class="w-6 h-6 rounded-full bg-mother-cream flex items-center justify-center"><i class="fas fa-check text-[10px] text-mother-terracotta"></i></div> Zéro paiement lors de la demande</li>
+                        <li class="flex items-center gap-4 text-slate-500 font-bold"><div class="w-6 h-6 rounded-full bg-mother-cream flex items-center justify-center"><i class="fas fa-check text-[10px] text-mother-terracotta"></i></div> Confirmation sous 24h</li>
+                        <li class="flex items-center gap-4 text-slate-500 font-bold"><div class="w-6 h-6 rounded-full bg-mother-cream flex items-center justify-center"><i class="fas fa-check text-[10px] text-mother-terracotta"></i></div> Devis ajustable & flexible</li>
+                        <li class="flex items-center gap-4 text-slate-500 font-bold"><div class="w-6 h-6 rounded-full bg-mother-cream flex items-center justify-center"><i class="fas fa-check text-[10px] text-mother-terracotta"></i></div> Accompagnement VIP dédié</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="premium-card">
+            <div class="premium-card p-12 lg:p-24 border-none shadow-2xl shadow-mother-terracotta/5 section-reveal bg-white">
                 @if(session('success'))
-                    <div style="background: #ecfdf5; color: #065f46; padding: 20px; border-radius: var(--radius-md); margin-bottom: 32px; border: 1px solid #10b981; display: flex; align-items: center; gap: 15px;">
-                        <i class="fas fa-check-circle" style="font-size: 1.5rem;"></i>
-                        <p style="margin: 0; font-weight: 600;">{{ session('success') }}</p>
+                    <div class="bg-emerald-50 text-emerald-700 p-10 rounded-3xl mb-16 flex items-center gap-8 border border-emerald-100 animate-slide-up">
+                        <i class="fas fa-check-circle text-3xl"></i>
+                        <p class="font-bold text-lg">{{ session('success') }}</p>
                     </div>
                 @endif
-                <form action="/reserver" method="POST">
+                <form action="/reserver" method="POST" id="reserveForm">
                     @csrf
                     
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                    <div class="grid lg:grid-cols-2 gap-10 mb-10">
                         <div class="form-group">
-                            <label for="name">Nom de famille *</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Ex: Dupont" required>
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Nom de famille *</label>
+                            <input type="text" name="name" class="form-control" placeholder="Ex: Dupont" required>
                         </div>
                         <div class="form-group">
-                            <label for="firstname">Prénom *</label>
-                            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Ex: Jean" required>
-                        </div>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
-                        <div class="form-group">
-                            <label for="email">Adresse Email *</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="votre@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Numéro de Téléphone *</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+33 X XX XX XX XX" required>
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Prénom *</label>
+                            <input type="text" name="firstname" class="form-control" placeholder="Ex: Jean" required>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="departure">Pays ou Ville de départ *</label>
-                        <input type="text" id="departure" name="departure" class="form-control" placeholder="Ex: Paris, Lyon, Abidjan..." required>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+                    <div class="grid lg:grid-cols-2 gap-10 mb-10">
                         <div class="form-group">
-                            <label for="date">Date de départ souhaitée *</label>
-                            <input type="date" id="date" name="date" class="form-control" required style="padding-top: 14px; padding-bottom: 14px;">
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Email *</label>
+                            <input type="email" name="email" class="form-control" placeholder="votre@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="duration">Durée du séjour *</label>
-                            <select id="duration" name="duration" class="form-control" required>
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Téléphone *</label>
+                            <input type="tel" name="phone" class="form-control" placeholder="+33 X XX XX XX XX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-10">
+                        <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Ville de départ *</label>
+                        <input type="text" name="departure" class="form-control" placeholder="Ex: Paris, Abidjan, Montréal..." required>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-10 mb-10">
+                        <div class="form-group">
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Date souhaitée *</label>
+                            <input type="date" name="date" class="form-control !py-5" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Type de Pack *</label>
+                            <select name="duration" class="form-control" required>
                                 <option value="7">Pack 7 Jours Standard</option>
                                 <option value="10">Pack 10 Jours Signature (Safari)</option>
-                                <option value="custom">Sur mesure (À préciser ci-dessous)</option>
+                                <option value="custom">Ititinéraire sur mesure</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="people">Nombre de Voyageurs *</label>
-                        <input type="number" id="people" name="people" class="form-control" value="1" min="1" required>
+                    <div class="form-group mb-10">
+                        <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Nombre de Voyageurs *</label>
+                        <input type="number" name="people" class="form-control" value="1" min="1" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="message">Note ou demande particulière (optionnel)</label>
-                        <textarea id="message" name="message" rows="5" class="form-control" placeholder="Avez-vous des besoins spécifiques ? Allergies, mobilité, célébration particulière..."></textarea>
+                    <div class="form-group mb-16">
+                        <label class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-4 block">Message ou demande (optionnel)</label>
+                        <textarea name="message" rows="6" class="form-control !pt-5" placeholder="Avez-vous des besoins spécifiques ?"></textarea>
                     </div>
 
-                    <div style="text-align: center; margin-top: 48px;">
-                        <button type="submit" class="btn btn-cta" style="width: 100%; border-radius: var(--radius-md); padding: 20px; font-size: 1.1rem;">ENVOYER MA DEMANDE DE RÉSERVATION</button>
-                    </div>
+                    <button type="submit" id="reserveBtn" class="btn btn-cta w-full py-6 rounded-3xl shadow-2xl shadow-mother-terracotta/20 text-lg">ENVOYER MA DEMANDE DE RÉSERVATION</button>
                 </form>
+
+                <script>
+                    document.getElementById('reserveForm').addEventListener('submit', function() {
+                        const btn = document.getElementById('reserveBtn');
+                        btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Traitement en cours...';
+                        btn.classList.add('opacity-75', 'cursor-not-allowed');
+                    });
+                </script>
             </div>
 
-            <!-- WhatsApp CTA -->
-            <div style="background: white; border-radius: var(--radius-lg); padding: 48px; margin-top: 64px; text-align: center; box-shadow: var(--shadow-ambient); border: 2px solid var(--color-mother-teal);">
-                <div style="width: 80px; height: 80px; background: #e6fdfa; color: var(--color-mother-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.22rem; margin: 0 auto 32px;">
-                    <i class="fab fa-whatsapp"></i>
+            <!-- WhatsApp Concierge -->
+            <div class="mt-32 section-reveal text-center">
+                <div class="glass p-16 lg:p-24 rounded-[4rem] border-mother-terracotta/5 shadow-2xl shadow-mother-terracotta/5">
+                    <div class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto mb-10 text-3xl shadow-lg shadow-emerald-500/10">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-3xl mb-6 font-display font-bold text-mother-earth">Vous préférez discuter directement ?</h3>
+                    <p class="text-slate-500 mb-12 max-w-2xl mx-auto text-xl leading-loose">Notre conciergerie WhatsApp est ouverte pour répondre à vos questions et gérer votre réservation de vive voix.</p>
+                    <a href="https://wa.me/22948803613" target="_blank" class="btn bg-emerald-600 text-white hover:bg-emerald-700 px-16 py-6 rounded-3xl text-lg font-bold shadow-2xl shadow-emerald-600/20 transition-premium">Ouvrir WhatsApp Business</a>
                 </div>
-                <h3 style="margin-bottom: 16px; font-family: 'Outfit';">Préférez réserver par WhatsApp ?</h3>
-                <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 32px; max-width: 500px; margin-inline: auto;">Contactez-nous directement pour une réponse en temps réel et un échange de vive voix.</p>
-                <a href="https://wa.me/22948803613" target="_blank" class="btn" style="background: #10b981; color: white; padding: 18px 48px;">DISCUTER SUR WHATSAPP</a>
             </div>
         </div>
     </div>

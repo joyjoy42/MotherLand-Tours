@@ -14,5 +14,5 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-# Run migrations (ensure migrations are run only once if using a cluster)
-# php artisan migrate --force
+# Migrations are handled by Render's generic preDeploy hook in render.yaml
+
