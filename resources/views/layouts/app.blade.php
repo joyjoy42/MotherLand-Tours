@@ -6,61 +6,75 @@
     <title>MotherLand Tours | Découvrez le Bénin Autrement</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Premium Floating Navbar -->
-    <nav class="navbar group px-8 md:px-12">
-        <div class="flex items-center justify-between w-full h-full">
-            <a href="/" class="flex items-center gap-3 group flex-shrink-0">
-                <div class="w-8 h-8 bg-mother-espresso rounded flex items-center justify-center text-white transition-transform duration-500">
-                    <i class="fas fa-earth-africa text-xs"></i>
+
+    <!-- ── Navbar (original flat structure with premium styling) ── -->
+    <nav class="navbar">
+        <div class="flex items-center justify-between w-full">
+            <!-- Brand -->
+            <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+                <div class="w-7 h-7 bg-mother-espresso rounded flex items-center justify-center">
+                    <i class="fas fa-earth-africa text-mother-gold text-xs"></i>
                 </div>
-                <span class="font-display font-bold text-lg md:text-xl tracking-tight text-mother-espresso uppercase">
+                <span class="font-display font-bold text-base tracking-tight text-mother-espresso uppercase">
                     MOTHERLAND <span class="text-mother-gold">TOURS</span>
                 </span>
             </a>
-            
-            <!-- Nav Items Area (Centered) -->
-            <div class="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
-                <a href="/" class="nav-item">Accueil</a>
-                <a href="/packs" class="nav-item">Itinéraires</a>
-                <a href="/itineraire" class="nav-item">Sur Mesure</a>
-                <a href="/a-propos" class="nav-item">L'Agence</a>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center gap-1">
+                <a href="/"          class="nav-item">Accueil</a>
+                <a href="/packs"     class="nav-item">Nos Packs</a>
+                <a href="/itineraire" class="nav-item">Itinéraire</a>
+                <a href="/reserver"  class="nav-item font-bold border border-mother-gold/50 text-mother-gold rounded-lg px-4 py-1.5 hover:bg-mother-gold hover:text-white transition-all">Réserver</a>
+                <a href="/a-propos"  class="nav-item">À Propos</a>
+                <a href="/contact"   class="nav-item">Contact</a>
             </div>
-            
-            <!-- CTA Area -->
-            <div class="flex items-center gap-4">
-                <a href="/contact" class="btn-nav-deep !px-8 !py-2.5 hidden md:flex">Contact</a>
-                <button class="lg:hidden text-mother-espresso p-2">
-                    <i class="fas fa-bars-staggered text-xl"></i>
-                </button>
-            </div>
+
+            <!-- Mobile -->
+            <button class="md:hidden text-mother-espresso p-2" id="mobileMenuBtn">
+                <i class="fas fa-bars text-lg"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Notification Toasts -->
-    <div class="fixed top-24 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md px-4 pointer-events-none">
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed top-16 left-0 right-0 bg-white border-b border-mother-sand z-40 px-6 py-4 shadow-lg">
+        <div class="flex flex-col gap-2">
+            <a href="/"          class="nav-item block">Accueil</a>
+            <a href="/packs"     class="nav-item block">Nos Packs</a>
+            <a href="/itineraire" class="nav-item block">Itinéraire</a>
+            <a href="/reserver"  class="nav-item block font-bold text-mother-gold">Réserver</a>
+            <a href="/a-propos"  class="nav-item block">À Propos</a>
+            <a href="/contact"   class="nav-item block">Contact</a>
+        </div>
+    </div>
+
+    <!-- Flash Messages -->
+    <div class="fixed top-20 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md px-4 pointer-events-none">
         @if(session('success'))
-            <div class="bg-mother-earth text-white px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-4 animate-slide-up pointer-events-auto">
-                <i class="fas fa-check-circle text-mother-terracotta"></i>
+            <div class="bg-mother-earth text-white px-6 py-3 rounded-xl shadow-xl flex items-center gap-3 pointer-events-auto">
+                <i class="fas fa-check-circle text-mother-gold"></i>
                 <p class="text-sm font-medium">{{ session('success') }}</p>
             </div>
         @endif
-
         @if(session('error'))
-            <div class="bg-red-600 text-white px-8 py-4 rounded-3xl shadow-2xl flex items-center gap-4 animate-slide-up pointer-events-auto">
-                <i class="fas fa-exclamation-circle text-white"></i>
+            <div class="bg-red-600 text-white px-6 py-3 rounded-xl shadow-xl flex items-center gap-3 pointer-events-auto">
+                <i class="fas fa-exclamation-circle"></i>
                 <p class="text-sm font-medium">{{ session('error') }}</p>
             </div>
         @endif
-
         @if ($errors->any())
-            <div class="bg-red-600 text-white px-8 py-4 rounded-3xl shadow-2xl flex flex-col gap-2 animate-slide-up pointer-events-auto">
-                <div class="flex items-center gap-4">
-                    <i class="fas fa-exclamation-triangle text-white"></i>
-                    <p class="text-sm font-bold">Veuillez corriger les erreurs suivantes :</p>
+            <div class="bg-red-600 text-white px-6 py-3 rounded-xl shadow-xl flex flex-col gap-1 pointer-events-auto">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p class="text-sm font-bold">Veuillez corriger les erreurs :</p>
                 </div>
-                <ul class="text-xs opacity-90 pl-10 list-disc">
+                <ul class="text-xs opacity-90 pl-8 list-disc">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
@@ -69,61 +83,72 @@
         @endif
     </div>
 
-    <main class="transition-all duration-1000 ease-in-out">
+    <!-- Main Content (offset for fixed navbar) -->
+    <main class="pt-16">
         @yield('content')
     </main>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/22948803613" class="wa-float" target="_blank" aria-label="Discuter avec nous sur WhatsApp">
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/22948803613" class="wa-float" target="_blank" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Deep Espresso Luxury Footer -->
-    <footer class="bg-mother-espresso text-mother-beige pt-40 pb-20 rounded-t-[4rem] mt-48">
+    <!-- Footer (original structure with premium styling) -->
+    <footer class="footer mt-12">
         <div class="container">
-            <div class="grid lg:grid-cols-4 gap-24 mb-32">
-                <div class="lg:col-span-2">
-                    <a href="/" class="font-display font-bold text-5xl tracking-tighter text-white mb-10 block uppercase">
+            <div class="grid md:grid-cols-3 gap-12 pb-10 border-b border-white/10">
+                <!-- Brand -->
+                <div>
+                    <a href="/" class="font-display font-bold text-xl text-white uppercase tracking-tight block mb-3">
                         MOTHERLAND <span class="text-mother-gold">TOURS</span>
                     </a>
-                    <p class="text-mother-beige/60 text-lg leading-relaxed max-w-md mb-12">
-                        L'agence de voyage pionnière pour une immersion authentique au Bénin. Excellence, héritage et découvertes inoubliables.
-                    </p>
-                    <div class="flex gap-8">
-                        <a href="#" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-mother-gold hover:text-mother-espresso transition-all group"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-mother-gold hover:text-mother-espresso transition-all group"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/22948803613" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-mother-gold hover:text-mother-espresso transition-all group"><i class="fab fa-whatsapp"></i></a>
+                    <p class="text-white/50 text-sm leading-relaxed">Découvrez le Bénin autrement.</p>
+                    <div class="flex gap-3 mt-6">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center text-white/60 hover:bg-mother-gold hover:text-white hover:border-transparent transition-all text-sm"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center text-white/60 hover:bg-mother-gold hover:text-white hover:border-transparent transition-all text-sm"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/22948803613" class="w-9 h-9 rounded-lg bg-white/8 border border-white/10 flex items-center justify-center text-white/60 hover:bg-mother-gold hover:text-white hover:border-transparent transition-all text-sm"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
+                <!-- Contact -->
                 <div>
-                    <h4 class="text-white text-xs mb-10 font-bold uppercase tracking-[0.3em]">Exploration</h4>
-                    <ul class="space-y-6 text-mother-beige/60 font-medium text-sm">
-                        <li><a href="/" class="hover:text-mother-gold transition-colors">Accueil</a></li>
-                        <li><a href="/packs" class="hover:text-mother-gold transition-colors">Découvertes</a></li>
-                        <li><a href="/itineraire" class="hover:text-mother-gold transition-colors">L'Itinéraire</a></li>
-                        <li><a href="/a-propos" class="hover:text-mother-gold transition-colors">Notre Vision</a></li>
+                    <h4 class="text-white/90 text-xs font-bold uppercase tracking-widest mb-5">Contact</h4>
+                    <ul class="space-y-3 text-white/50 text-sm">
+                        <li>Email: contact@motherlandtours.com</li>
+                        <li>Tél: +229 0148803613</li>
                     </ul>
                 </div>
 
+                <!-- Social / Links -->
                 <div>
-                    <h4 class="text-white text-xs mb-10 font-bold uppercase tracking-[0.3em]">Contact</h4>
-                    <ul class="space-y-6 text-mother-beige/60 font-medium text-sm">
-                        <li class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-mother-gold"></i> Cotonou, Bénin</li>
-                        <li class="flex items-center gap-4"><i class="fas fa-phone text-mother-gold"></i> +229 0148803613</li>
-                        <li class="flex items-center gap-4"><i class="fas fa-envelope text-mother-gold"></i> contact@motherland.com</li>
-                    </ul>
+                    <h4 class="text-white/90 text-xs font-bold uppercase tracking-widest mb-5">Suivez-nous</h4>
+                    <p class="text-white/50 text-sm">WhatsApp: +229 0148803613</p>
+                    <div class="flex flex-col gap-2 mt-4">
+                        <a href="/legal"   class="text-white/40 text-xs hover:text-mother-gold transition-colors">Légal</a>
+                        <a href="/privacy" class="text-white/40 text-xs hover:text-mother-gold transition-colors">Vie Privée</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="pt-20 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-10 text-mother-beige/40 text-[10px] uppercase tracking-[0.4em] font-bold">
-                <p>&copy; {{ date('Y') }} Motherland Tours. Heritage & Discovery.</p>
-                <div class="flex gap-16 font-bold">
-                    <a href="/legal" class="hover:text-white transition-colors">Légal</a>
-                    <a href="/privacy" class="hover:text-white transition-colors">Vie Privée</a>
-                </div>
-            </div>
+            <p class="text-white/30 text-xs text-center pt-8">
+                &copy; {{ date('Y') }} Motherland Tours. Tous droits réservés.
+            </p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Section reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.section-reveal').forEach(el => obs.observe(el));
+        });
+    </script>
 </body>
 </html>
