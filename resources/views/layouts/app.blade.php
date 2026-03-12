@@ -9,30 +9,29 @@
 </head>
 <body>
     <!-- Premium Floating Navbar -->
-    <nav class="navbar">
-        <div class="flex items-center justify-between w-full h-full relative">
-            <!-- Logo Area -->
-            <div class="flex-1 flex justify-start">
-                <a href="/" class="flex items-center gap-4 group flex-shrink-0">
-                    <span class="font-display font-bold text-xl md:text-2xl tracking-tighter text-mother-earth uppercase pulse-gentle whitespace-nowrap">MOTHERLAND TOURS</span>
-                </a>
-            </div>
+    <nav class="navbar group px-8 md:px-12">
+        <div class="flex items-center justify-between w-full h-full">
+            <a href="/" class="flex items-center gap-4 group flex-shrink-0">
+                <div class="w-10 h-10 bg-mother-espresso rounded-lg flex items-center justify-center text-white rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                    <i class="fas fa-earth-africa text-sm"></i>
+                </div>
+                <span class="font-display font-bold text-xl md:text-2xl tracking-tighter text-mother-espresso uppercase">
+                    MOTHERLAND <span class="text-mother-gold">TOURS</span>
+                </span>
+            </a>
             
             <!-- Nav Items Area (Centered) -->
-            <div class="hidden lg:flex items-center justify-center gap-8 xl:gap-12 flex-[2]">
-                <a href="/" class="nav-item whitespace-nowrap px-4">Accueil</a>
-                <a href="/packs" class="nav-item whitespace-nowrap px-4">Nos Packs</a>
-                <a href="/itineraire" class="nav-item whitespace-nowrap px-4">Itinéraire</a>
-                <a href="/reserver" class="nav-item whitespace-nowrap px-4">Réserver</a>
-                <a href="/a-propos" class="nav-item whitespace-nowrap px-4">À Propos</a>
+            <div class="hidden lg:flex items-center justify-center gap-8 xl:gap-10">
+                <a href="/" class="nav-item">Accueil</a>
+                <a href="/packs" class="nav-item">Itinéraires</a>
+                <a href="/itineraire" class="nav-item">Sur Mesure</a>
+                <a href="/a-propos" class="nav-item">L'Agence</a>
             </div>
             
             <!-- CTA Area -->
-            <div class="flex-1 flex justify-end items-center gap-6">
-                <div class="hidden lg:block">
-                    <a href="/contact" class="btn-nav-deep">Contact</a>
-                </div>
-                <button class="lg:hidden text-mother-earth p-2">
+            <div class="flex items-center gap-6">
+                <a href="/contact" class="btn-nav-deep hidden md:flex">Contact</a>
+                <button class="lg:hidden text-mother-espresso p-2">
                     <i class="fas fa-bars-staggered text-2xl"></i>
                 </button>
             </div>
@@ -70,59 +69,58 @@
         @endif
     </div>
 
-    <main>
+    <main class="transition-all duration-1000 ease-in-out">
         @yield('content')
     </main>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/22948803613" class="wa-float" target="_blank">
+    <a href="https://wa.me/22948803613" class="wa-float" target="_blank" aria-label="Discuter avec nous sur WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Premium Rounded Footer -->
-    <footer class="footer mt-32">
-        <div class="container pt-20">
-            <div class="grid lg:grid-cols-4 gap-20 mb-24">
+    <!-- Deep Espresso Luxury Footer -->
+    <footer class="bg-mother-espresso text-mother-beige pt-40 pb-20 rounded-t-[4rem] mt-48">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 gap-24 mb-32">
                 <div class="lg:col-span-2">
-                    <a href="/" class="font-display font-bold text-4xl tracking-tighter text-mother-earth mb-8 block uppercase">
-                        MOTHERLAND TOURS
+                    <a href="/" class="font-display font-bold text-5xl tracking-tighter text-white mb-10 block uppercase">
+                        MOTHERLAND <span class="text-mother-gold">TOURS</span>
                     </a>
-                    <p class="text-slate-500 max-w-sm mb-12 leading-loose text-sm">
-                        L'agence de voyage pionnière pour une immersion authentique au Bénin. Nous créons des ponts entre les cultures et les cœurs, une escale à la fois.
+                    <p class="text-mother-beige/60 text-lg leading-relaxed max-w-md mb-12">
+                        L'agence de voyage pionnière pour une immersion authentique au Bénin. Excellence, héritage et découvertes inoubliables.
                     </p>
-                    <div class="flex gap-6">
-                        <a href="#" class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-mother-earth hover:bg-mother-terracotta hover:text-white transition-premium shadow-sm hover:shadow-xl"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-mother-earth hover:bg-mother-terracotta hover:text-white transition-premium shadow-sm hover:shadow-xl"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-mother-earth hover:bg-mother-terracotta hover:text-white transition-premium shadow-sm hover:shadow-xl"><i class="fab fa-whatsapp"></i></a>
+                    <div class="flex gap-8">
+                        <a href="#" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-mother-gold hover:text-mother-espresso transition-all group"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-mother-gold hover:text-mother-espresso transition-all group"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/22948803613" class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-mother-gold hover:text-mother-espresso transition-all group"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-mother-earth font-display font-bold text-xs uppercase tracking-[0.2em] mb-10">Exploration</h4>
-                    <ul class="space-y-5 text-slate-500 text-sm">
-                        <li><a href="/" class="hover:text-mother-terracotta transition-colors">Accueil</a></li>
-                        <li><a href="/a-propos" class="hover:text-mother-terracotta transition-colors">Notre Vision</a></li>
-                        <li><a href="/itineraire" class="hover:text-mother-terracotta transition-colors">L'Itinéraire</a></li>
-                        <li><a href="/packs" class="hover:text-mother-terracotta transition-colors">Nos Tarifs</a></li>
-                        <li><a href="/devis" class="hover:text-mother-terracotta transition-colors">Voyage Sur-Mesure</a></li>
+                    <h4 class="text-white text-xs mb-10 font-bold uppercase tracking-[0.3em]">Exploration</h4>
+                    <ul class="space-y-6 text-mother-beige/60 font-medium text-sm">
+                        <li><a href="/" class="hover:text-mother-gold transition-colors">Accueil</a></li>
+                        <li><a href="/packs" class="hover:text-mother-gold transition-colors">Découvertes</a></li>
+                        <li><a href="/itineraire" class="hover:text-mother-gold transition-colors">L'Itinéraire</a></li>
+                        <li><a href="/a-propos" class="hover:text-mother-gold transition-colors">Notre Vision</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-mother-earth font-display font-bold text-xs uppercase tracking-[0.2em] mb-10">Conciergerie</h4>
-                    <ul class="space-y-5 text-slate-500 text-sm">
-                        <li class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-mother-terracotta/10 flex items-center justify-center"><i class="fas fa-envelope text-mother-terracotta text-xs"></i></div> motherlandtours9@gmail.com</li>
-                        <li class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-mother-terracotta/10 flex items-center justify-center"><i class="fas fa-phone text-mother-terracotta text-xs"></i></div> +229 0148803613</li>
-                        <li class="flex items-center gap-4"><div class="w-8 h-8 rounded-lg bg-mother-terracotta/10 flex items-center justify-center"><i class="fas fa-map-marker-alt text-mother-terracotta text-xs"></i></div> Cotonou, Bénin</li>
+                    <h4 class="text-white text-xs mb-10 font-bold uppercase tracking-[0.3em]">Contact</h4>
+                    <ul class="space-y-6 text-mother-beige/60 font-medium text-sm">
+                        <li class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-mother-gold"></i> Cotonou, Bénin</li>
+                        <li class="flex items-center gap-4"><i class="fas fa-phone text-mother-gold"></i> +229 0148803613</li>
+                        <li class="flex items-center gap-4"><i class="fas fa-envelope text-mother-gold"></i> contact@motherland.com</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="pt-16 border-t border-mother-terracotta/5 flex flex-col lg:flex-row justify-between items-center gap-10 text-slate-400 text-[10px] uppercase tracking-[0.3em]">
-                <p>&copy; {{ date('Y') }} Motherland Tours. Excellence et Authenticité.</p>
-                <div class="flex gap-12 font-bold">
-                    <a href="#" class="hover:text-mother-terracotta transition-colors">Mentions Légales</a>
-                    <a href="#" class="hover:text-mother-terracotta transition-colors">Confidentialité</a>
+
+            <div class="pt-20 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-10 text-mother-beige/40 text-[10px] uppercase tracking-[0.4em] font-bold">
+                <p>&copy; {{ date('Y') }} Motherland Tours. Heritage & Discovery.</p>
+                <div class="flex gap-16 font-bold">
+                    <a href="/legal" class="hover:text-white transition-colors">Légal</a>
+                    <a href="/privacy" class="hover:text-white transition-colors">Vie Privée</a>
                 </div>
             </div>
         </div>

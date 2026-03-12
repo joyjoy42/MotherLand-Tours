@@ -35,6 +35,14 @@ Route::get('/devis', function () {
     return view('devis');
 });
 
+Route::get('/legal', function () {
+    return view('legal');
+});
+
+Route::get('/privacy', function () {
+    return view('privacy');
+});
+
 // Form Handlers
 Route::post('/contact', function (Request $request) {
     $data = $request->validate([

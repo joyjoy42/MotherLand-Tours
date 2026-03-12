@@ -4,22 +4,35 @@
 @source '../js/**/*.js';
 
 @theme {
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
     --font-display: 'Outfit', sans-serif;
 
-    --color-mother-terracotta: #E6904D;
-    --color-mother-navy: #012B55;
-    --color-mother-teal: #026A5C;
-    --color-mother-cream: #FFF9F5;
-    --color-mother-earth: #4D342E;
+    --color-mother-espresso: #26211E;
+    /* Deep rich brown */
+    --color-mother-beige: #F5F2EF;
+    /* Soft beige background */
+    --color-mother-sand: #EBE4DC;
+    /* Sandy neutral */
+    --color-mother-earth: #8C6A5A;
+    /* Warm earthy brown */
+    --color-mother-gold: #C4A484;
+    /* Sand gold accent */
 
     --color-benin-green: #008751;
     --color-benin-yellow: #fcd116;
     --color-benin-red: #e8112d;
+
+    --shadow-tripktion: 0 4px 24px -4px rgba(38, 33, 30, 0.08);
+    --shadow-tripktion-hover: 0 12px 40px -8px rgba(38, 33, 30, 0.12);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
 }
 
 body {
-    @apply font-sans bg-mother-cream text-slate-500 antialiased;
+    @apply font-sans bg-mother-beige text-mother-espresso/80 antialiased leading-relaxed;
 }
 
 h1,
@@ -28,11 +41,23 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-display font-semibold text-mother-earth tracking-tight;
+    @apply font-display font-semibold text-mother-espresso tracking-tight leading-[1.2];
+}
+
+.section-padding {
+    @apply py-32 md:py-48 lg:py-64 xl:py-72;
+}
+
+.section-reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-1000;
+}
+
+.section-reveal.visible {
+    @apply opacity-100 translate-y-0;
 }
 
 .container {
-    @apply max-w-7xl mx-auto px-6;
+    @apply max-w-[1400px] mx-auto px-8 md:px-12;
 }
 
 .navbar {
@@ -56,8 +81,14 @@ h6 {
 }
 
 .premium-card {
-    @apply bg-white p-12 transition-all duration-700 border border-mother-terracotta/10 relative overflow-hidden;
-    border-radius: 3rem;
+    @apply bg-white p-12 md:p-16 transition-all duration-700 border border-mother-sand/30 relative overflow-hidden;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-tripktion);
+}
+
+.premium-card:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-tripktion-hover);
 }
 
 .btn {
@@ -69,8 +100,8 @@ h6 {
 }
 
 .btn-cta {
-    @apply bg-mother-terracotta text-white hover:bg-mother-earth transition-all;
-    box-shadow: 0 20px 40px -5px rgba(230, 144, 77, 0.2);
+    @apply bg-mother-espresso text-white hover:bg-mother-earth transition-all;
+    box-shadow: 0 20px 40px -5px rgba(38, 33, 30, 0.2);
 }
 
 .wa-float {

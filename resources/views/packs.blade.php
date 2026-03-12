@@ -9,9 +9,9 @@
     </div>
     
     <div class="container relative z-10 px-6 animate-fade-in py-32">
-        <span class="text-mother-terracotta font-bold tracking-[0.5em] uppercase text-xs mb-8 block">Tarifs & Packs</span>
+        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-8 block">Tarifs & Packs</span>
         <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
-            La Liberté de <br/><span class="text-mother-terracotta italic underline decoration-white/10 underline-offset-16">Découvrir</span>.
+            La Liberté de <br/><span class="text-mother-gold italic">Découvrir</span>.
         </h1>
         <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-loose text-balance">
             Des parcours ciselés pour une immersion sans compromis. Du littoral lacustre aux savanes du Nord, le Bénin se dévoile à vous.
@@ -24,7 +24,7 @@
     <div class="container">
         <!-- Premium tabs -->
         <div class="flex justify-center mb-32 section-reveal">
-            <div class="glass p-3 rounded-2xl flex flex-wrap justify-center gap-3 border-mother-terracotta/5 shadow-mother-terracotta/5">
+            <div class="glass p-3 rounded-2xl flex flex-wrap justify-center gap-3 border-mother-gold/5 shadow-mother-espresso/5">
                 <button class="nav-item !px-10 !py-4 !rounded-xl !text-xs !font-bold !tracking-widest active" onclick="showPricing('paris')">VOYAGE DEPUIS PARIS</button>
                 <button class="nav-item !px-10 !py-4 !rounded-xl !text-xs !font-bold !tracking-widest" onclick="showPricing('abidjan')">DEPUIS ABIDJAN</button>
                 <button class="nav-item !px-10 !py-4 !rounded-xl !text-xs !font-bold !tracking-widest" onclick="showPricing('maroc')">DEPUIS MAROC</button>
@@ -59,8 +59,8 @@
 
         <!-- Final Aesthetic CTA -->
         <div class="mt-32 text-center section-reveal">
-            <div class="inline-block p-12 rounded-[3rem] bg-white shadow-[--shadow-float] max-w-2xl border border-slate-100">
-                <div class="w-16 h-16 bg-mother-terracotta/10 text-mother-terracotta rounded-full flex items-center justify-center mx-auto mb-8 text-2xl">
+            <div class="inline-block p-12 rounded-[3rem] bg-white shadow-[--shadow-tripktion] max-w-2xl border border-slate-100">
+                <div class="w-16 h-16 bg-mother-gold/10 text-mother-gold rounded-full flex items-center justify-center mx-auto mb-8 text-2xl">
                     <i class="fas fa-magic"></i>
                 </div>
                 <h3 class="text-2xl mb-6">Besoin d'un parcours sur mesure ?</h3>

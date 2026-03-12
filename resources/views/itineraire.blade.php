@@ -9,9 +9,9 @@
     </div>
     
     <div class="container relative z-10 px-6 animate-fade-in py-32">
-        <span class="text-mother-terracotta font-bold tracking-[0.5em] uppercase text-xs mb-8 block">Expédition</span>
-        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9] [text-shadow:_0_4px_30px_rgba(0,0,0,0.5)]">
-            Votre <span class="text-mother-terracotta italic underline decoration-white/10 underline-offset-16">Odyssée</span>.
+        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-8 block">Expédition</span>
+        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
+            Votre <span class="text-mother-gold italic">Odyssée</span>.
         </h1>
         <p class="text-xl text-white/90 max-w-2xl mx-auto leading-loose text-balance font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.3)]">
             Un voyage initiatique entre cités lacustres, palais royaux et savanes sauvages. 8 jours de pure authenticité.
@@ -23,15 +23,15 @@
     <div class="container">
         <!-- Duration Toggle -->
         <div class="flex justify-center mb-32 section-reveal">
-            <div class="glass p-3 rounded-2xl flex gap-3 border-mother-terracotta/5 shadow-mother-terracotta/5">
-                <button class="nav-item !px-10 !py-4 !rounded-xl active uppercase text-xs tracking-[0.2em] font-black" onclick="showItinerary(7)">Pack 7 Jours</button>
-                <button class="nav-item !px-10 !py-4 !rounded-xl uppercase text-xs tracking-[0.2em] font-black" onclick="showItinerary(10)">Pack 10 Jours</button>
+            <div class="glass p-3 rounded-2xl flex gap-3 border-mother-gold/5 shadow-mother-espresso/5">
+                <button class="nav-item !px-10 !py-4 !rounded-xl active uppercase text-[10px] tracking-[0.3em] font-bold" onclick="showItinerary(7)">Pack 7 Jours</button>
+                <button class="nav-item !px-10 !py-4 !rounded-xl uppercase text-[10px] tracking-[0.3em] font-bold" onclick="showItinerary(10)">Pack 10 Jours</button>
             </div>
         </div>
 
         <div style="max-width: 1000px; margin: 0 auto; position: relative;">
             <!-- Timeline Line -->
-            <div style="position: absolute; left: 40px; top: 0; bottom: 0; width: 4px; background: var(--color-mother-terracotta); opacity: 0.1; border-radius: 4px; display: none;"></div>
+            <div style="position: absolute; left: 40px; top: 0; bottom: 0; width: 4px; background: var(--color-mother-gold); opacity: 0.1; border-radius: 4px; display: none;"></div>
 
             <div id="itin-days">
                 @php
@@ -80,29 +80,29 @@
                 @endphp
 
                 @foreach ($days as $num => $day)
-                <div class="premium-card day-box section-reveal !p-8 lg:!p-12 mb-12 shadow-sm hover:shadow-glow border-none" data-day="{{ $num }}">
+                <div class="premium-card day-box section-reveal !p-8 lg:!p-12 mb-12 shadow-sm hover:shadow-tripktion border-none" data-day="{{ $num }}">
                     <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                         <div class="flex-shrink-0">
-                            <div class="relative w-24 h-24 bg-mother-earth rounded-[2rem] flex flex-col items-center justify-center shadow-2xl shadow-mother-terracotta/10 overflow-hidden group">
-                                <div class="absolute inset-0 bg-benin-green opacity-0 group-hover:opacity-100 transition-premium duration-500"></div>
-                                <span class="relative z-10 text-[10px] font-bold text-white/40 tracking-[0.3em] uppercase">JOUR</span>
-                                <span class="relative z-10 text-4xl font-display font-semibold text-white leading-none">{{ str_pad($num, 2, '0', STR_PAD_LEFT) }}</span>
+                            <div class="relative w-20 h-20 bg-mother-espresso rounded-[1.5rem] flex flex-col items-center justify-center shadow-2xl shadow-mother-espresso/10 overflow-hidden group">
+                                <div class="absolute inset-0 bg-mother-gold opacity-0 group-hover:opacity-10 transition-premium duration-500"></div>
+                                <span class="relative z-10 text-[8px] font-bold text-white/30 tracking-[0.2em] uppercase">JOUR</span>
+                                <span class="relative z-10 text-3xl font-display font-semibold text-white leading-none">{{ str_pad($num, 2, '0', STR_PAD_LEFT) }}</span>
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="flex flex-wrap items-center gap-6 mb-6">
-                                <h3 class="text-4xl font-display text-mother-earth leading-tight">{{ $day['title'] }}</h3>
-                                <div class="w-10 h-10 rounded-full bg-mother-terracotta/10 flex items-center justify-center text-mother-terracotta">
+                                <h3 class="text-4xl font-display text-mother-espresso leading-tight">{{ $day['title'] }}</h3>
+                                <div class="w-10 h-10 rounded-full bg-mother-gold/10 flex items-center justify-center text-mother-gold">
                                     <i class="fas {{ $day['icon'] }}"></i>
                                 </div>
                             </div>
                             <p class="text-slate-500 text-xl leading-loose mb-10 max-w-4xl">{{ $day['desc'] }}</p>
                             
-                            <div class="flex flex-wrap gap-3">
-                                <div class="px-5 py-2 bg-benin-green/5 rounded-xl text-[10px] font-bold text-benin-green uppercase tracking-widest flex items-center gap-3 border border-benin-green/10">
-                                    <i class="fas fa-car"></i> Chauffeur Privé Inclu
+                            <div class="flex flex-wrap gap-4">
+                                <div class="px-6 py-3 bg-mother-espresso/5 rounded-xl text-[10px] font-bold text-mother-espresso uppercase tracking-widest flex items-center gap-3 border border-mother-espresso/10">
+                                    <i class="fas fa-car"></i> Chauffeur Privé
                                 </div>
-                                <div class="px-5 py-2 bg-mother-terracotta/5 rounded-xl text-[10px] font-bold text-mother-terracotta uppercase tracking-widest flex items-center gap-3 border border-mother-terracotta/10">
+                                <div class="px-6 py-3 bg-mother-gold/5 rounded-xl text-[10px] font-bold text-mother-gold uppercase tracking-widest flex items-center gap-3 border border-mother-gold/10">
                                     <i class="fas fa-camera"></i> Visite Guidée
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
             </div>
 
             <!-- Final CTA -->
-            <div class="bg-mother-earth p-16 lg:p-32 rounded-[5rem] text-center relative overflow-hidden section-reveal mt-32 shadow-2xl shadow-mother-terracotta/10">
+            <div class="bg-mother-espresso p-16 lg:p-32 rounded-[5rem] text-center relative overflow-hidden section-reveal mt-32 shadow-2xl shadow-mother-espresso/10">
                 <div class="absolute inset-0 opacity-5"></div>
                 <div class="relative z-10">
                     <h3 class="!text-white text-4xl lg:text-7xl mb-12 font-display font-semibold leading-tight">Prêt à tracer <br/>votre propre route ?</h3>
