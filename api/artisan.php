@@ -47,8 +47,18 @@ if ($providedKey !== $expectedKey) {
     die("Unauthorized. Please provide 'key' matching first 10 chars of APP_KEY.");
 }
 
-// 7. Run the command
+// 7. Run the command or debug
 try {
+    if ($command === 'ls') {
+        $path = $_GET['path'] ?? '.';
+        echo "<h1>Listing: $path</h1>";
+        echo "<pre>";
+        $files = scandir($path);
+        print_r($files);
+        echo "</pre>";
+        exit;
+    }
+
     $output = new BufferedOutput;
     $status = $kernel->handle(
         new StringInput($command),
