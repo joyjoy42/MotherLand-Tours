@@ -1,20 +1,13 @@
 {
+    "version": 2,
     "builds": [
         {
-            "src": "api/index.php",
+            "src": "api/*.php",
             "use": "vercel-php@0.9.0"
         },
         {
-            "src": "api/artisan.php",
-            "use": "vercel-php@0.9.0"
-        },
-        {
-            "src": "api/ls.php",
-            "use": "vercel-php@0.9.0"
-        },
-        {
-            "src": "api/phpinfo.php",
-            "use": "vercel-php@0.9.0"
+            "src": "public/**/*",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
@@ -33,6 +26,10 @@
         {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(css|js|images|fonts|assets|favicon.ico|robots.txt)",
+            "dest": "/public/$1"
         },
         {
             "src": "/(css|js|images|fonts|assets)/(.*)",
