@@ -49,12 +49,16 @@ if ($providedKey !== $expectedKey) {
 
 // 7. Run the command or debug
 try {
-    if ($command === 'ls') {
+    if (trim($command) === 'ls') {
         $path = $_GET['path'] ?? '.';
         echo "<h1>Listing: $path</h1>";
         echo "<pre>";
-        $files = scandir($path);
-        print_r($files);
+        if (is_dir($path)) {
+            $files = scandir($path);
+            print_r($files);
+        } else {
+            echo "Path is not a directory: $path";
+        }
         echo "</pre>";
         exit;
     }
