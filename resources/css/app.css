@@ -54,6 +54,16 @@ h6 {
     @apply font-display font-semibold text-mother-espresso tracking-tight leading-tight;
 }
 
+/* Headings inside dark sections should be white */
+.bg-mother-espresso h1,
+.bg-mother-espresso h2,
+.bg-mother-espresso h3,
+.bg-mother-espresso h4,
+.bg-mother-espresso h5,
+.bg-mother-espresso h6 {
+    color: #fff;
+}
+
 /* ── Layout ── */
 .container {
     @apply max-w-[1280px] mx-auto px-6 md:px-10;
