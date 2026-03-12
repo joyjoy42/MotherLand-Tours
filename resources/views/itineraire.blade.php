@@ -34,27 +34,34 @@
             @php
                 $days = [
                     1  => ['title' => 'Arrivée à Cotonou',            'desc' => "Accueil à l'aéroport par votre guide. Installation à l'hôtel, briefing et premiers aperçus de la capitale économique du Bénin.", 'icon' => 'fa-plane-arrival'],
-                    2  => ['title' => 'Cotonou - Ville Vibrante',        'desc' => "Visite du Grand Marché Dantokpa, le plus grand marché à ciel ouvert d'Afrique de l'Ouest. Découverte du quartier des zémidjans et de l'architecture coloniale. Voiture avec chauffeur.", 'icon' => 'fa-city'],
-                    3  => ['title' => 'Ouidah - Porte du Non-Retour',   'desc' => "Journée de recueillement. Temple des Pythons, Forêt Sacrée, et l'émouvante Route des Esclaves aboutissant à la Porte du Non Retour face à l'océan. Voiture avec chauffeur.", 'icon' => 'fa-monument'],
-                    4  => ['title' => 'Ganvié - Venise d\'Afrique',      'desc' => "Embarquement pour la Venise de l\'Afrique. Navigation sur le lac Nokoué à la découverte de la cité millénaire sur pilotis et du marché flottant. Voiture avec chauffeur.", 'icon' => 'fa-ship'],
-                    5  => ['title' => 'Abomey - Palais Royaux',         'desc' => "Voyage dans le temps au cœur du Danxomè. Palais royaux classés UNESCO, guerrières Amazones, bas-reliefs sacrés. Voiture avec chauffeur.", 'icon' => 'fa-crown'],
-                    6  => ['title' => 'Porto-Novo - Capitale',          'desc' => "Découverte de la capitale administrative. Musée Honmè, grande mosquée afro-brésilienne, marchés artisanaux. Voiture avec chauffeur.", 'icon' => 'fa-mosque'],
-                    7  => ['title' => 'Parc National Pendjari',         'desc' => "Safari au Pendjari : éléphants, buffles, lions. L\'une des réserves les mieux préservées de l\'Afrique de l\'Ouest.", 'icon' => 'fa-paw', 'badge' => 'Pack 10 Jours'],
-                    8  => ['title' => 'Natitingou - Région Atacora',    'desc' => "Découverte des Tata Somba, châteaux de terre fortifiés des Bétamaribé. Architecture ancestrale unique classée UNESCO.", 'icon' => 'fa-mountain', 'badge' => 'Pack 10 Jours'],
-                    9  => ['title' => 'Retour Cotonou',                 'desc' => "Halte à Dassa-Zoumè pour la Colline Sacrée. Retour en soirée sur Cotonou pour une nuit de repos avant le départ.", 'icon' => 'fa-route', 'badge' => 'Pack 10 Jours'],
-                    10 => ['title' => 'Départ',                         'desc' => "Transfert à l\'aéroport. Votre odyssée béninoise reste à jamais gravée dans vos mémoires.", 'icon' => 'fa-plane-departure', 'badge' => 'Pack 10 Jours'],
+                    2  => ['title' => 'Cotonou - Ville Vibrante',        'desc' => "Visite du Grand Marché Dantokpa, le plus grand marché à ciel ouvert d'Afrique de l'Ouest. Découverte du quartier des zémidjans.", 'icon' => 'fa-city'],
+                    3  => ['title' => 'Ouidah - Porte du Non-Retour',   'desc' => "Journée de recueillement. Temple des Pythons, Forêt Sacrée, et l'émouvante Route des Esclaves aboutissant à la Porte face à l'océan.", 'icon' => 'fa-monument'],
+                    4  => ['title' => 'Ganvié - Venise d\'Afrique',      'desc' => "Embarquement pour la Venise de l'Afrique. Navigation sur le lac Nokoué à la découverte de la cité millénaire sur pilotis.", 'icon' => 'fa-ship'],
+                    5  => ['title' => 'Abomey - Palais Royaux',         'desc' => "Voyage dans le temps au cœur du Danxomè. Palais royaux classés UNESCO, guerrières Amazones, bas-reliefs sacrés.", 'icon' => 'fa-crown'],
+                    6  => ['title' => 'Porto-Novo - Capitale',          'desc' => "Découverte de la capitale administrative. Musée Honmè, grande mosquée afro-brésilienne, marchés artisanaux.", 'icon' => 'fa-mosque'],
+                    7  => ['title' => 'Parc National Pendjari',         'desc' => "Safari au Pendjari : éléphants, buffles, lions. L'une des réserves les mieux préservées de l'Afrique de l'Ouest.", 'icon' => 'fa-paw', 'badge' => 'Pack 10 Jours'],
+                    8  => ['title' => 'Dassa / Savè',                   'desc' => "Découverte des collines de Dassa et de la cité de Savè. Un paysage unique entre roches sacrées et traditions locales.", 'icon' => 'fa-mountain', 'badge' => 'Pack 10 Jours'],
+                    9  => ['title' => 'Grand Popo - Détente',           'desc' => "Cap sur les plages de Grand Popo. Détente entre lagune et océan, visite de la Bouche du Roy pour clôturer le voyage.", 'icon' => 'fa-umbrella-beach', 'badge' => 'Pack 10 Jours'],
+                    10 => ['title' => 'Départ Final',                   'desc' => "Transfert à l'aéroport de Cotonou. Votre odyssée béninoise reste à jamais gravée dans vos mémoires. À bientôt !", 'icon' => 'fa-plane-departure', 'badge' => 'Pack 10 Jours'],
+                    11 => ['title' => 'Départ',                         'desc' => "Fin de votre aventure. Transfert à l'aéroport pour votre vol retour. Le Bénin vous dit à bientôt !", 'icon' => 'fa-plane-departure', 'tag' => 'depart-7'],
                 ];
-            @endphp
+@endphp
 
             @foreach ($days as $num => $day)
             <div class="day-box border border-mother-sand rounded-2xl bg-white overflow-hidden section-reveal hover:shadow-md transition-all"
                  data-day="{{ $num }}"
-                 @if($num > 7) style="display:none" @endif>
+                 @if(isset($day['tag']) && $day['tag'] === 'depart-7')
+                    style="display:none"
+                 @elseif($num > 6 && $num != 11)
+                    style="display:none"
+                 @endif>
                 <div class="flex items-start gap-0">
                     {{-- Day Number --}}
                     <div class="bg-mother-espresso text-white px-4 py-5 flex flex-col items-center justify-center flex-shrink-0 min-w-[60px] self-stretch">
                         <span class="text-[9px] font-bold uppercase text-white/40 tracking-widest">Jour</span>
-                        <span class="text-2xl font-display font-bold leading-none">{{ str_pad($num, 2, '0', STR_PAD_LEFT) }}</span>
+                        <span class="text-2xl font-display font-bold leading-none">
+                            {{ (isset($day['tag']) && $day['tag'] === 'depart-7') ? '07' : str_pad($num, 2, '0', STR_PAD_LEFT) }}
+                        </span>
                     </div>
                     {{-- Content --}}
                     <div class="px-6 py-5 flex-1">
@@ -104,7 +111,14 @@
 <script>
     function showItinerary(days, btn) {
         document.querySelectorAll('.day-box').forEach(box => {
-            box.style.display = (parseInt(box.dataset.day) <= days) ? 'block' : 'none';
+            const d = parseInt(box.dataset.day);
+            if (days === 7) {
+                // Show 1-6 and the special departure day (11)
+                box.style.display = (d <= 6 || d === 11) ? 'block' : 'none';
+            } else {
+                // Show 1-10
+                box.style.display = (d <= 10) ? 'block' : 'none';
+            }
         });
         document.querySelectorAll('.itin-tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');

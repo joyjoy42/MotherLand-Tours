@@ -54,14 +54,26 @@ h6 {
     @apply font-display font-semibold text-mother-espresso tracking-tight leading-tight;
 }
 
-/* Headings inside dark sections should be white */
+/* Headings inside dark sections or with text-white should be white */
 .bg-mother-espresso h1,
 .bg-mother-espresso h2,
 .bg-mother-espresso h3,
 .bg-mother-espresso h4,
 .bg-mother-espresso h5,
-.bg-mother-espresso h6 {
-    color: #fff;
+.bg-mother-espresso h6,
+.text-white,
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6 {
+    color: #fff !important;
+}
+
+/* Better readability for text on image overlays */
+.text-white {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* ── Layout ── */
