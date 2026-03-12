@@ -2,18 +2,18 @@
 
 @section('content')
 <!-- Premium Header -->
-<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth text-center">
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-mother-espresso text-center">
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover opacity-10" alt="Contact Hero">
-        <div class="absolute inset-0 bg-mother-earth/70"></div>
+        <div class="absolute inset-0 bg-mother-espresso/85"></div>
     </div>
     
-    <div class="container relative z-10 px-6 animate-fade-in py-32">
-        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-8 block">Conciergerie</span>
-        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
-            Parlons de votre <br/><span class="text-mother-gold italic">Prochaine</span> Escale.
+    <div class="container relative z-10 px-6 animate-fade-in py-20 lg:py-28">
+        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-6 block">Conciergerie</span>
+        <h1 class="text-4xl lg:text-6xl text-white font-display font-bold mb-6 leading-tight">
+            Parlons de votre <span class="text-mother-gold italic">Prochaine</span> Escale.
         </h1>
-        <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-loose text-balance">
+        <p class="text-base text-white/70 max-w-xl mx-auto leading-relaxed font-medium">
             Notre équipe de conciergerie est à votre écoute pour transformer vos désirs de voyage en une réalité inoubliable.
         </p>
     </div>
@@ -46,25 +46,23 @@
                     </div>
                 </div>
 
-                <!-- WhatsApp Card - Highlighted -->
-                <div class="bg-mother-espresso p-12 lg:p-16 rounded-[4rem] relative overflow-hidden group shadow-2xl shadow-mother-espresso/10">
-                    
+                <!-- WhatsApp Card -->
+                <div class="bg-mother-espresso p-8 lg:p-10 rounded-2xl relative overflow-hidden group shadow-xl shadow-mother-espresso/10">
                     <div class="relative z-10">
-                        <div class="w-16 h-16 bg-white/5 text-mother-gold rounded-2xl flex items-center justify-center text-3xl mb-10 border border-white/5">
+                        <div class="w-12 h-12 bg-white/10 text-mother-gold rounded-xl flex items-center justify-center text-2xl mb-6">
                             <i class="fab fa-whatsapp"></i>
                         </div>
-                        <h3 class="text-3xl text-white mb-6 leading-tight">Besoin d'une réponse instantanée ?</h3>
-                        <p class="text-white/50 text-lg mb-12 leading-loose">Notre équipe est disponible sur WhatsApp pour vous accompagner en temps réel sur tous vos projets.</p>
-                        <a href="https://wa.me/22948803613" target="_blank" class="btn btn-cta w-full py-6 rounded-2xl shadow-2xl shadow-mother-espresso/20">Démarrer une discussion</a>
+                        <h3 class="text-2xl text-white font-bold mb-4 leading-tight">Besoin d'une réponse instantanée ?</h3>
+                        <p class="text-white/60 text-base mb-8 leading-relaxed">Notre équipe est disponible sur WhatsApp pour vous accompagner en temps réel.</p>
+                        <a href="https://wa.me/22948803613" target="_blank" class="btn btn-cta w-full !py-4 rounded-xl">Démarrer une discussion</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Form Section -->
             <div class="section-reveal">
-                <div class="premium-card p-12 lg:p-20 border-none shadow-2xl shadow-mother-espresso/5 bg-white">
-                    <h3 class="text-4xl font-display text-mother-espresso mb-6 leading-tight">Envoyez-nous un message</h3>
-                    <p class="text-mother-espresso/50 mb-16 text-lg leading-loose">Nous revenons vers vous avec une proposition sous 24 heures maximum.</p>
+                <div class="premium-card p-8 lg:p-12 border-none shadow-xl shadow-mother-espresso/5 bg-white">
+                    <h3 class="text-2xl font-display font-bold text-mother-espresso mb-3 leading-tight">Envoyez-nous un message</h3>
+                    <p class="text-mother-espresso/60 mb-8 text-base leading-relaxed">Nous revenons vers vous avec une proposition sous 24 heures.</p>
 
                     <form action="/contact" method="POST" class="space-y-8" id="contactForm">
                         @csrf

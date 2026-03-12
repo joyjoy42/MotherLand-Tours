@@ -13,16 +13,16 @@
                 </span>
                 Héritage & Prestige
             </div>
-            <h1 class="text-6xl md:text-8xl font-display font-semibold leading-[0.9] tracking-tighter mb-12 text-mother-espresso">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight tracking-tight mb-8 text-mother-espresso">
                 Découvrez le <br/>
-                <span class="text-mother-earth">Bénin</span> Autrement.
+                <span class="text-mother-gold">Bénin</span> Autrement.
             </h1>
-            <p class="text-xl md:text-2xl text-mother-espresso/60 mb-20 max-w-xl leading-relaxed text-balance">
-                L'agence de voyage pionnière pour une immersion authentique. Explorez des terres sacrées avec l'excellence du service sur-mesure.
+            <p class="text-lg md:text-xl text-mother-espresso/70 mb-12 max-w-xl leading-relaxed text-balance font-medium">
+                L’agence de voyage pionnière pour une immersion authentique. Explorez des terres sacrées avec l’excellence du service sur-mesure.
             </p>
-            <div class="flex flex-wrap gap-8">
-                <a href="/reserver" class="btn btn-cta px-12 py-6 text-lg">Initier mon voyage</a>
-                <a href="/packs" class="btn border border-mother-espresso/10 text-mother-espresso hover:bg-mother-espresso hover:text-white transition-all px-12 py-6 text-lg">Nos Itinéraires</a>
+            <div class="flex flex-wrap gap-6">
+                <a href="/reserver" class="btn btn-cta !px-10 !py-5">Initier mon voyage</a>
+                <a href="/packs" class="btn border-2 border-mother-espresso text-mother-espresso hover:bg-mother-espresso hover:text-white transition-all !px-10 !py-5">Nos Itinéraires</a>
             </div>
         </div>
         
@@ -32,16 +32,13 @@
             <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-mother-sand/10 rounded-full blur-2xl"></div>
             
             <!-- Staggered Image Gallery -->
-            <div class="relative w-full h-full flex items-center justify-center translate-x-4 lg:translate-x-12">
-                <div class="relative z-20 w-4/5 h-[600px] overflow-hidden rounded-[5rem] shadow-2xl transform shadow-mother-espresso/5 group hover:scale-[1.02] transition-premium">
-                    <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover object-[center_20%]" alt="Porte du Non Retour">
-                    <div class="absolute inset-x-0 bottom-0 bg-white/80 backdrop-blur-md p-12 translate-y-full group-hover:translate-y-0 transition-premium">
-                        <p class="text-[10px] font-bold tracking-[0.4em] uppercase mb-4 opacity-70 text-mother-earth">Ouidah la Mystique</p>
-                        <h4 class="text-2xl text-mother-earth">Porte du Non Retour</h4>
-                    </div>
+            <div class="relative w-full h-full flex items-center justify-center translate-x-4 lg:translate-x-8">
+                <div class="relative z-20 w-4/5 h-[500px] md:h-[600px] overflow-hidden rounded-[3rem] shadow-2xl transition-premium">
+                    <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover" alt="Porte du Non Retour">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <div class="absolute -left-12 bottom-12 z-30 w-1/2 h-64 overflow-hidden rounded-[3rem] shadow-2xl border-4 border-white transition-premium hover:-translate-y-4">
-                    <img src="{{ asset('images/assets/abomey.png') }}" class="w-full h-full object-cover" alt="Vue détaillée des palais royaux historiques d'Abomey">
+                <div class="absolute -left-8 -bottom-8 z-30 w-1/2 h-56 overflow-hidden rounded-[2rem] shadow-2xl border-4 border-white transition-premium hover:-translate-y-2">
+                    <img src="{{ asset('images/assets/abomey.png') }}" class="w-full h-full object-cover" alt="Abomey">
                 </div>
             </div>
         </div>
@@ -137,11 +134,11 @@
                 </div>
                 <h3 class="text-4xl mb-6 text-white group-hover:text-mother-gold transition-premium leading-tight">L'Essentiel Sud</h3>
                 <p class="text-white/50 mb-8 leading-loose text-base">Explorez le triangle d'or : Cotonou, Ouidah et Ganvié. L'immersion parfaite.</p>
-                <div class="mb-12 flex items-baseline gap-2">
-                    <span class="text-mother-gold font-bold text-3xl font-display">850€</span>
-                    <span class="text-white/30 text-[10px] uppercase tracking-widest font-bold">/ Voyageur</span>
+                <div class="mb-10 flex items-baseline gap-2">
+                    <span class="text-mother-gold font-bold text-4xl font-display">850€</span>
+                    <span class="text-white/40 text-[10px] uppercase tracking-widest font-bold">/ Voyageur</span>
                 </div>
-                <a href="/packs" class="btn border border-white/20 text-white w-full py-6 hover:bg-white hover:text-mother-espresso transition-all rounded-xl">Consulter l'Itinéraire</a>
+                <a href="/packs" class="btn border border-white/30 text-white w-full py-5 hover:bg-white hover:text-mother-espresso transition-all rounded-xl">Consulter l'Itinéraire</a>
             </div>
 
             <!-- Pack 10 Jours -->
@@ -155,11 +152,11 @@
                 </div>
                 <h3 class="text-4xl mb-6 text-mother-espresso group-hover:text-mother-earth transition-premium leading-tight">Safari Nord & Tata</h3>
                 <p class="text-mother-espresso/50 mb-8 leading-loose text-base">Tata Somba et Pendjari. Pour les âmes en quête de sauvage et d'authenticité.</p>
-                <div class="mb-12 flex items-baseline gap-2">
-                    <span class="text-mother-earth font-bold text-3xl font-display">1,450€</span>
-                    <span class="text-mother-espresso/30 text-[10px] uppercase tracking-widest font-bold">/ Voyageur</span>
+                <div class="mb-10 flex items-baseline gap-2">
+                    <span class="text-mother-espresso font-bold text-4xl font-display">1,450€</span>
+                    <span class="text-mother-espresso/40 text-[10px] uppercase tracking-widest font-bold">/ Voyageur</span>
                 </div>
-                <a href="/packs" class="btn btn-cta w-full py-6 rounded-xl">Initier l'Expédition</a>
+                <a href="/packs" class="btn btn-cta w-full py-5 rounded-xl">Initier l'Expédition</a>
             </div>
         </div>
     </div>

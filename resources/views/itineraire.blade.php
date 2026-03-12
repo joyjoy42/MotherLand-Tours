@@ -2,18 +2,18 @@
 
 @section('content')
 <!-- Premium Header -->
-<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth text-center">
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-mother-espresso text-center">
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover opacity-10" alt="Itinerary Hero">
-        <div class="absolute inset-0 bg-mother-earth/85"></div>
+        <div class="absolute inset-0 bg-mother-espresso/80"></div>
     </div>
     
-    <div class="container relative z-10 px-6 animate-fade-in py-32">
-        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-8 block">Expédition</span>
-        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
+    <div class="container relative z-10 px-6 animate-fade-in py-20 lg:py-28">
+        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[9px] mb-6 block">Expédition</span>
+        <h1 class="text-5xl lg:text-7xl text-white font-display font-bold mb-6 leading-tight">
             Votre <span class="text-mother-gold italic">Odyssée</span>.
         </h1>
-        <p class="text-xl text-white/90 max-w-2xl mx-auto leading-loose text-balance font-medium [text-shadow:_0_2px_10px_rgba(0,0,0,0.3)]">
+        <p class="text-base text-white/70 max-w-xl mx-auto leading-relaxed font-medium">
             Un voyage initiatique entre cités lacustres, palais royaux et savanes sauvages. 8 jours de pure authenticité.
         </p>
     </div>
@@ -22,10 +22,10 @@
 <section class="section-padding bg-white relative">
     <div class="container">
         <!-- Duration Toggle -->
-        <div class="flex justify-center mb-32 section-reveal">
-            <div class="glass p-3 rounded-2xl flex gap-3 border-mother-gold/5 shadow-mother-espresso/5">
-                <button class="nav-item !px-10 !py-4 !rounded-xl active uppercase text-[10px] tracking-[0.3em] font-bold" onclick="showItinerary(7)">Pack 7 Jours</button>
-                <button class="nav-item !px-10 !py-4 !rounded-xl uppercase text-[10px] tracking-[0.3em] font-bold" onclick="showItinerary(10)">Pack 10 Jours</button>
+        <div class="flex justify-center mb-16 section-reveal">
+            <div class="glass p-2 rounded-xl flex gap-2 border-mother-gold/5">
+                <button class="nav-item !px-8 !py-3 !rounded-lg active uppercase text-[9px] tracking-[0.3em] font-bold" onclick="showItinerary(7)">Pack 7 Jours</button>
+                <button class="nav-item !px-8 !py-3 !rounded-lg uppercase text-[9px] tracking-[0.3em] font-bold" onclick="showItinerary(10)">Pack 10 Jours</button>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
                 @endphp
 
                 @foreach ($days as $num => $day)
-                <div class="premium-card day-box section-reveal !p-8 lg:!p-12 mb-12 shadow-sm hover:shadow-tripktion border-none" data-day="{{ $num }}">
+                <div class="premium-card day-box section-reveal !p-6 lg:!p-10 mb-8 shadow-sm hover:shadow-tripktion border-none" data-day="{{ $num }}">
                     <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                         <div class="flex-shrink-0">
                             <div class="relative w-20 h-20 bg-mother-espresso rounded-[1.5rem] flex flex-col items-center justify-center shadow-2xl shadow-mother-espresso/10 overflow-hidden group">

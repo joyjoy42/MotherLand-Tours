@@ -7,23 +7,23 @@
     --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
     --font-display: 'Outfit', sans-serif;
 
-    --color-mother-espresso: #26211E;
-    /* Deep rich brown */
-    --color-mother-beige: #F5F2EF;
-    /* Soft beige background */
-    --color-mother-sand: #EBE4DC;
-    /* Sandy neutral */
-    --color-mother-earth: #8C6A5A;
-    /* Warm earthy brown */
-    --color-mother-gold: #C4A484;
-    /* Sand gold accent */
+    --color-mother-espresso: #1A1614;
+    /* Deepest rich coffee for maximum readability */
+    --color-mother-beige: #FAF8F6;
+    /* Pure pearl beige for clean backgrounds */
+    --color-mother-sand: #F0EDE9;
+    /* Subtle sand neutral */
+    --color-mother-earth: #634A3E;
+    /* Stronger leather brown for contrast */
+    --color-mother-gold: #B97A56;
+    /* Vibrant sunset copper for accents */
 
     --color-benin-green: #008751;
     --color-benin-yellow: #fcd116;
     --color-benin-red: #e8112d;
 
-    --shadow-tripktion: 0 4px 24px -4px rgba(38, 33, 30, 0.08);
-    --shadow-tripktion-hover: 0 12px 40px -8px rgba(38, 33, 30, 0.12);
+    --shadow-tripktion: 0 4px 20px -2px rgba(26, 22, 20, 0.04);
+    --shadow-tripktion-hover: 0 20px 48px -12px rgba(26, 22, 20, 0.08);
 }
 
 html {
@@ -32,7 +32,7 @@ html {
 }
 
 body {
-    @apply font-sans bg-mother-beige text-mother-espresso/80 antialiased leading-relaxed;
+    @apply font-sans bg-mother-beige text-mother-espresso antialiased leading-relaxed;
 }
 
 h1,
@@ -45,7 +45,7 @@ h6 {
 }
 
 .section-padding {
-    @apply py-32 md:py-48 lg:py-64 xl:py-72;
+    @apply py-20 md:py-32 lg:py-40;
 }
 
 .section-reveal {
@@ -61,8 +61,8 @@ h6 {
 }
 
 .navbar {
-    @apply fixed top-6 left-6 right-6 md:left-10 md:right-10 z-50 bg-white/90 backdrop-blur-2xl border border-white/40 h-20 flex items-center transition-all duration-700 px-8 md:px-14 shadow-2xl;
-    border-radius: 2.5rem;
+    @apply fixed top-4 left-4 right-4 md:top-6 md:left-8 md:right-8 z-50 bg-white border border-mother-sand h-16 md:h-20 flex items-center transition-all duration-700 px-6 md:px-12 shadow-[0_8px_30px_rgb(0, 0, 0, 0.04)];
+    border-radius: 1.5rem;
 }
 
 .nav-item {
@@ -75,9 +75,9 @@ h6 {
 }
 
 .footer {
-    @apply bg-mother-cream text-mother-earth pt-28 pb-16 relative overflow-hidden border-t border-mother-terracotta/10;
-    border-top-left-radius: 5rem;
-    border-top-right-radius: 5rem;
+    @apply bg-mother-espresso text-mother-beige pt-20 pb-12 relative overflow-hidden;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
 }
 
 .premium-card {

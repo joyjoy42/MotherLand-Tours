@@ -11,11 +11,11 @@
     <!-- Premium Floating Navbar -->
     <nav class="navbar group px-8 md:px-12">
         <div class="flex items-center justify-between w-full h-full">
-            <a href="/" class="flex items-center gap-4 group flex-shrink-0">
-                <div class="w-10 h-10 bg-mother-espresso rounded-lg flex items-center justify-center text-white rotate-3 group-hover:rotate-0 transition-transform duration-500">
-                    <i class="fas fa-earth-africa text-sm"></i>
+            <a href="/" class="flex items-center gap-3 group flex-shrink-0">
+                <div class="w-8 h-8 bg-mother-espresso rounded flex items-center justify-center text-white transition-transform duration-500">
+                    <i class="fas fa-earth-africa text-xs"></i>
                 </div>
-                <span class="font-display font-bold text-xl md:text-2xl tracking-tighter text-mother-espresso uppercase">
+                <span class="font-display font-bold text-lg md:text-xl tracking-tight text-mother-espresso uppercase">
                     MOTHERLAND <span class="text-mother-gold">TOURS</span>
                 </span>
             </a>
@@ -29,10 +29,10 @@
             </div>
             
             <!-- CTA Area -->
-            <div class="flex items-center gap-6">
-                <a href="/contact" class="btn-nav-deep hidden md:flex">Contact</a>
+            <div class="flex items-center gap-4">
+                <a href="/contact" class="btn-nav-deep !px-8 !py-2.5 hidden md:flex">Contact</a>
                 <button class="lg:hidden text-mother-espresso p-2">
-                    <i class="fas fa-bars-staggered text-2xl"></i>
+                    <i class="fas fa-bars-staggered text-xl"></i>
                 </button>
             </div>
         </div>

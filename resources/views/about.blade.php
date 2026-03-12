@@ -2,18 +2,18 @@
 
 @section('content')
 <!-- Premium Header -->
-<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-mother-earth text-center">
+<section class="relative min-h-[55vh] flex items-center justify-center overflow-hidden bg-mother-espresso text-center">
     <div class="absolute inset-0 z-0">
         <img src="{{ asset('images/assets/porte_du_non_retour_night_new.png') }}" class="w-full h-full object-cover opacity-10" alt="About Hero">
-        <div class="absolute inset-0 bg-mother-earth/70"></div>
+        <div class="absolute inset-0 bg-mother-espresso/80"></div>
     </div>
     
-    <div class="container relative z-10 px-6 animate-fade-in py-32">
-        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-8 block">Notre Essence</span>
-        <h1 class="text-6xl lg:text-9xl text-white font-display font-semibold mb-12 leading-[0.9]">
-            L'Âme de <br/><span class="text-mother-gold italic">Motherland</span> Tours.
+    <div class="container relative z-10 px-6 animate-fade-in py-24 lg:py-32">
+        <span class="text-mother-gold font-bold tracking-[0.4em] uppercase text-[10px] mb-6 block">Notre Essence</span>
+        <h1 class="text-5xl lg:text-7xl text-white font-display font-bold mb-8 leading-tight">
+            L'Âme de <span class="text-mother-gold italic">Motherland</span> Tours.
         </h1>
-        <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-loose text-balance">
+        <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed text-balance font-medium">
             Plus qu'une agence, une passerelle émotionnelle vers les racines oubliées et les trésors cachés du Bénin.
         </p>
     </div>
@@ -22,27 +22,27 @@
 <section class="section-padding bg-white relative">
     <div class="container">
         <!-- Mission Section -->
-        <div class="grid lg:grid-cols-2 gap-32 items-center mb-56 section-reveal py-16">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24 section-reveal">
             <div>
-                <span class="text-mother-gold font-bold text-[10px] uppercase tracking-[0.4em] mb-8 block">Notre Genèse</span>
-                <h2 class="text-5xl lg:text-6xl font-display text-mother-espresso mb-12 leading-tight">Une mission de <span class="italic text-mother-earth">Reconnexion</span> culturelle.</h2>
-                <div class="space-y-8 text-slate-500 text-xl leading-loose text-balance">
+                <span class="text-mother-gold font-bold text-[10px] uppercase tracking-[0.4em] mb-6 block">Notre Genèse</span>
+                <h2 class="text-4xl lg:text-5xl font-display text-mother-espresso mb-8 leading-tight">Une mission de <span class="italic text-mother-gold">Reconnexion</span> culturelle.</h2>
+                <div class="space-y-5 text-mother-espresso/65 text-lg leading-relaxed">
                     <p>Motherland Tours est née d'un désir profond : briser les murs de l'oubli et inviter le monde à découvrir le Bénin dans sa vérité la plus pure. Nous croyons que le voyage est le plus puissant vecteur de compréhension mutuelle.</p>
-                    <p>Nous créons des expériences qui vont au-delà du simple tourisme. C'est une immersion dans l'histoire des puissants royaumes fon et yoruba, un dialogue spirituel avec les traditions vaudou, et une célébration vibrante de la vie contemporaine béninoise, entre art moderne et marchés colorés.</p>
+                    <p>Nous créons des expériences qui vont au-delà du simple tourisme. C'est une immersion dans l'histoire des puissants royaumes fon et yoruba, un dialogue spirituel avec les traditions vaudou, et une célébration vibrante de la vie contemporaine béninoise.</p>
                 </div>
             </div>
-            <div class="relative group">
-                <div class="absolute -inset-8 bg-mother-gold/5 rounded-[4rem] -rotate-6 group-hover:rotate-0 transition-premium duration-1000"></div>
-                <img src="{{ asset('images/assets/abomey.png') }}" class="relative z-10 w-full h-[700px] object-cover rounded-[3.5rem] shadow-2xl shadow-mother-espresso/10" alt="Palais royaux d'Abomey">
+            <div class="relative">
+                <img src="{{ asset('images/assets/abomey.png') }}" class="w-full h-[480px] object-cover rounded-3xl shadow-xl shadow-mother-espresso/10" alt="Palais royaux d'Abomey">
             </div>
         </div>
 
         <!-- Values -->
-        <div class="text-center mb-32 section-reveal">
-            <h2 class="text-5xl font-display text-mother-espresso leading-tight">L'Éthique au cœur <br/>du <span class="text-mother-gold italic">Voyage.</span></h2>
+        <div class="text-center mb-16 section-reveal">
+            <span class="text-mother-gold font-bold text-[10px] uppercase tracking-[0.4em] mb-4 block">Nos Valeurs</span>
+            <h2 class="text-4xl lg:text-5xl font-display text-mother-espresso leading-tight">L'Éthique au cœur du <span class="text-mother-gold italic">Voyage.</span></h2>
         </div>
 
-        <div class="grid lg:grid-cols-4 gap-10 mb-56 section-reveal">
+        <div class="grid lg:grid-cols-4 gap-8 mb-24 section-reveal">
             <div class="premium-card text-center group border-none shadow-mother-espresso/5">
                 <div class="w-16 h-16 bg-white/5 border border-mother-gold/20 text-mother-gold rounded-2xl flex items-center justify-center mx-auto mb-10 text-2xl group-hover:bg-mother-gold group-hover:text-mother-espresso transition-premium">
                     <i class="fas fa-heart"></i>
@@ -74,7 +74,7 @@
         </div>
 
         <!-- Cultural Heritage Deep Dive -->
-        <div class="grid lg:grid-cols-2 gap-24 items-center mb-56 section-reveal">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24 section-reveal">
              <div class="order-2 lg:order-1">
                 <img src="{{ asset('images/assets/ganvie.png') }}" class="w-full h-[600px] object-cover rounded-[3.5rem] shadow-2xl" alt="Vue d'ensemble du village traditionnel de Ganvié sur l'eau">
             </div>
@@ -89,12 +89,12 @@
         </div>
 
         <!-- Vision -->
-        <div class="bg-mother-espresso p-16 lg:p-32 rounded-[5rem] relative overflow-hidden section-reveal text-center mb-56 shadow-2xl shadow-mother-espresso/10">
+        <div class="bg-mother-espresso p-12 lg:p-20 rounded-3xl relative overflow-hidden section-reveal text-center mb-20 shadow-xl shadow-mother-espresso/10">
             
             <div class="relative z-10 max-w-4xl mx-auto">
                 <span class="text-mother-gold font-bold tracking-[0.4em] text-[10px] uppercase mb-10 block">Horizon 2030</span>
                 <h2 class="text-5xl lg:text-7xl text-white font-display mb-12 leading-tight">Le Bénin ne se visite pas, <br/><span class="italic text-mother-gold">il se vit.</span></h2>
-                <div class="space-y-10 text-slate-300 text-2xl leading-loose text-balance px-4 lg:px-20">
+                <div class="text-white/70 text-lg leading-relaxed text-balance max-w-2xl mx-auto">
                     <p>Nous aspirons à devenir la référence absolue du tourisme culturel conscient en Afrique de l'Ouest. Notre vision est celle d'un monde où le voyage transforme autant le voyageur que la terre qui l'accueille.</p>
                 </div>
             </div>
