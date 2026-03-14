@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MotherLand Tours | Découvrez le Bénin Autrement</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +17,8 @@
     <nav class="navbar">
         <div class="flex items-center justify-between w-full">
             <!-- Brand -->
-            <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-                <div class="w-7 h-7 bg-mother-espresso rounded flex items-center justify-center">
-                    <i class="fas fa-earth-africa text-mother-gold text-xs"></i>
-                </div>
-                <span class="font-display font-bold text-base tracking-tight text-mother-espresso uppercase">
-                    MOTHERLAND <span class="text-mother-gold">TOURS</span>
-                </span>
+            <a href="/" class="flex items-center flex-shrink-0">
+                <img src="{{ asset('images/logo.png') }}" alt="Motherland Tours Logo" class="h-12 w-auto object-contain">
             </a>
 
             <!-- Nav Links -->
@@ -99,8 +95,8 @@
             <div class="grid md:grid-cols-3 gap-12 pb-10 border-b border-white/10">
                 <!-- Brand -->
                 <div>
-                    <a href="/" class="font-display font-bold text-xl text-white uppercase tracking-tight block mb-3">
-                        MOTHERLAND <span class="text-mother-gold">TOURS</span>
+                    <a href="/" class="block mb-3">
+                        <img src="{{ asset('images/logo.png') }}" alt="Motherland Tours Logo" class="h-16 w-auto object-contain">
                     </a>
                     <p class="text-white/50 text-sm leading-relaxed">Découvrez le Bénin autrement.</p>
                     <div class="flex gap-3 mt-6">
