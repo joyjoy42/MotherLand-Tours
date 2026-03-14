@@ -8,7 +8,7 @@
         <div class="space-y-12 text-slate-600 leading-loose">
             <div>
                 <h3 class="text-2xl mb-4 text-mother-earth">Éditeur du Site</h3>
-                <p>Le site <strong>Motherland Tours</strong> est édité par l'agence Motherland Tours SARL, dont le siège social est situé à Cotonou, Bénin.</p>
+                <p>Le site <strong>Motherland Tours</strong> a été conçu et est édité par l'agence <strong>GENEZISE</strong> pour le compte de Motherland Tours SARL, dont le siège social est situé à Cotonou, Bénin.</p>
                 <p>Email : motherlandtours9@gmail.com</p>
                 <p>Téléphone : +229 0148803613</p>
             </div>
