@@ -1,6 +1,10 @@
 <!-- DIAGNOSTIC: Premium UI V3 - Original Structure Preserved -->
 @extends('layouts.app')
 
+@section('title', 'MotherLand Tours | Voyage au Bénin & Tourisme Authentique')
+@section('meta_description', 'Agence de voyage au Bénin proposant des circuits touristiques immersifs. Découvrez la culture, l\'histoire et les paysages authentiques avec nos packs voyage bénin.')
+@section('meta_keywords', 'voyage au benin, tourisme benin, pack voyage benin, circuit touristique bénin, agence voyage afrique, découvrir le bénin, motherland tours')
+
 @section('content')
 
 {{-- ── Hero ── --}}

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Itinéraire Détaillé | Tourisme Bénin avec MotherLand Tours')
+@section('meta_description', 'Parcourez le programme détaillé de votre voyage au Bénin. Des plages de Ouidah jusqu\'aux paysages sauvages du Nord et de la Pendjari. Un circuit touristique inoubliable.')
+@section('meta_keywords', 'itinéraire bénin, tourisme benin, voyage au benin, guide bénin, ouidah, ganvié, natitingou, safari bénin, agence de voyage')
+
 @section('content')
 
 {{-- Page Header (with image like original screenshot) --}}

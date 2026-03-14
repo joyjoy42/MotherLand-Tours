@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Nos Packs Voyage Bénin | MotherLand Tours')
+@section('meta_description', 'Découvrez nos offres de circuits touristiques et pack voyage bénin. Choisissez entre nos explorations de 7 jours dans le Sud ou nos safaris de 10 jours dans le Nord.')
+@section('meta_keywords', 'pack voyage benin, circuit benin, voyage au benin, tarif voyage bénin, tourisme benin, safari pendjari, tata somba, ganvié, ouidah')
+
 @section('content')
 
 {{-- Page Header --}}

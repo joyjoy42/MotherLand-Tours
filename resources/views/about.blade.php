@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'À Propos de Nous | Agence de Tourisme Bénin')
+@section('meta_description', 'Découvrez l\'histoire de MotherLand Tours. Nous sommes une agence de voyage dédiée à la valorisation du tourisme au Bénin à travers des circuits authentiques.')
+@section('meta_keywords', 'agence de voyage bénin, tourisme benin, voyage au benin, équipe motherland tours, découvrir le bénin, voyage afrique de l\'ouest')
+
 @section('content')
 
 {{-- Page Header --}}

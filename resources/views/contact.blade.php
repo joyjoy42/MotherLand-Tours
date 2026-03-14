@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'Contactez-Nous | Réservez votre Voyage au Bénin')
+@section('meta_description', 'Contactez l\'agence Motherland Tours pour organiser votre prochain voyage au Bénin. Demandez un devis sur mesure ou posez-nous vos questions.')
+@section('meta_keywords', 'contact motherland tours, réserver voyage bénin, agence de voyage bénin contact, devis tourisme benin')
+
 @section('content')
 
 {{-- Page Header --}}
